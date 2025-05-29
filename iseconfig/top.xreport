@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2025-05-29T20:59:48</DateModified>
+  <DateModified>2025-05-29T21:26:36</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/Xilinx/project/final_project/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/Xilinx/project/final_project</ImplementationReportsDirectory>
+  <SavedFilePath>D:/Xilinx/project/final/final_project/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/Xilinx/project/final/final_project\</ImplementationReportsDirectory>
   <DateInitialized>2025-05-29T20:22:50</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
