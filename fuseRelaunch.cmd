@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "uni9000_ver" -lib "aim_ver" -lib "cpld_ver" -lib "xilinxcorelib_ver" -o "D:/Xilinx/project/final_project/counter_tb_isim_beh.exe" -prj "D:/Xilinx/project/final_project/counter_tb_beh.prj" "work.counter_tb" "work.glbl" 
