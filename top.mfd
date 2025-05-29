@@ -1,0 +1,2240 @@
+MDF Database:  version 1.0
+MDF_INFO | top | XC95108-7-PC84
+MACROCELL | 0 | 1 | clk1_0_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 6 | 0 | 0 | 0 | 16 | 0 | 2 | 0 | 4 | 0 | 3 | 0 | 17
+INPUTS | 11 | qdbg<20>.PIN  | u_queue/hd<1>  | qdbg<12>.PIN  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<4>.PIN  | clk1_2_OBUF.EXP  | busy<0>.LFBK
+INPUTMC | 8 | 1 | 8 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 0 | 2 | 0 | 11
+INPUTP | 3 | 120 | 116 | 95
+EXPORTS | 1 | 0 | 0
+IMPORTS | 1 | 0 | 2
+EQ | 18 | 
+   !clk1<0>.D = ;Imported pterms FB1_3
+	  !dt1<0> & ld1.LFBK
+	# busy<0>.LFBK & clk1_0_OBUF.LFBK & !ld1.LFBK
+	# !busy<0>.LFBK & !clk1_0_OBUF.LFBK & !ld1.LFBK
+	# !clk1_0_OBUF.LFBK & !clk1_1_OBUF.LFBK & !ld1.LFBK & 
+	!clk1_3_OBUF.LFBK & !clk1_2_OBUF.LFBK;
+   clk1<0>.CLK = clk;	// GCK
+   !clk1<0>.AR = rst_n;	// GSR
+    clk1_0_OBUF.EXP  =  u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<0> & busy<0>.LFBK & qdbg<4>.PIN
+	# u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<1> & busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<0> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<1> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<1> & busy<0>.LFBK & qdbg<20>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 16 | clk1_1_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 10 | 0 | 15 | 0 | 16 | 0 | 2 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 0 | 3 | 0 | 17
+INPUTS | 13 | clk1_1_OBUF.LFBK  | ld1.LFBK  | busy<0>.LFBK  | qdbg<20>.PIN  | u_queue/hd<1>  | qdbg<12>.PIN  | u_queue/hd<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<4>.PIN  | EXP1_.EXP  | clk1_0_OBUF.LFBK
+INPUTMC | 10 | 0 | 16 | 0 | 9 | 0 | 11 | 1 | 8 | 1 | 9 | 1 | 7 | 1 | 12 | 1 | 6 | 0 | 17 | 0 | 1
+INPUTP | 3 | 120 | 116 | 95
+EXPORTS | 1 | 0 | 15
+IMPORTS | 1 | 0 | 17
+EQ | 18 | 
+   clk1<1>.D = clk1_0_OBUF.LFBK & clk1_1_OBUF.LFBK & !ld1.LFBK
+;Imported pterms FB1_18
+	# dt1<1> & ld1.LFBK
+	# !busy<0>.LFBK & clk1_1_OBUF.LFBK & !ld1.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_3_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_2_OBUF.LFBK;
+   clk1<1>.CLK = clk;	// GCK
+   !clk1<1>.AR = rst_n;	// GSR
+    clk1_1_OBUF.EXP  =  u_queue/hd<1> & !u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<1> & busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<0> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<1> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<1> & busy<0>.LFBK & qdbg<20>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 2 | clk1_2_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 9 | 0 | 1 | 0 | 2 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 0 | 3 | 0 | 17
+INPUTS | 8 | clk1_1_OBUF.LFBK  | clk1_3_OBUF.LFBK  | busy<0>.LFBK  | ld1.LFBK  | clk1_2_OBUF.LFBK  | dt1<0>  | EXP0_.EXP  | clk1_0_OBUF.LFBK
+INPUTMC | 8 | 0 | 16 | 0 | 4 | 0 | 11 | 0 | 9 | 0 | 2 | 5 | 6 | 0 | 3 | 0 | 1
+EXPORTS | 1 | 0 | 1
+IMPORTS | 1 | 0 | 3
+EQ | 14 | 
+   clk1<2>.T = busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_3_OBUF.LFBK
+;Imported pterms FB1_4
+	# dt1<2> & ld1.LFBK & !clk1_2_OBUF.LFBK
+	# !dt1<2> & ld1.LFBK & clk1_2_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_2_OBUF.LFBK;
+   clk1<2>.CLK = clk;	// GCK
+   !clk1<2>.AR = rst_n;	// GSR
+    clk1_2_OBUF.EXP  =  !dt1<0> & ld1.LFBK
+	# busy<0>.LFBK & clk1_0_OBUF.LFBK & !ld1.LFBK
+	# !busy<0>.LFBK & !clk1_0_OBUF.LFBK & !ld1.LFBK
+	# !clk1_0_OBUF.LFBK & !clk1_1_OBUF.LFBK & !ld1.LFBK & 
+	!clk1_3_OBUF.LFBK & !clk1_2_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 2 | clk2_0_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 4 | 1 | 2 | 1 | 1 | 1 | 5 | 1 | 11
+INPUTS | 7 | ld2  | dt2<0>  | busy<1>.LFBK  | clk2_1_OBUF.LFBK  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | clk2_0_OBUF.LFBK
+INPUTMC | 7 | 2 | 3 | 5 | 8 | 1 | 7 | 1 | 1 | 1 | 5 | 1 | 11 | 1 | 2
+EQ | 7 | 
+   !clk2<0>.D = ld2 & !dt2<0>
+	# !ld2 & clk2_0_OBUF.LFBK & busy<1>.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & !busy<1>.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & !clk2_1_OBUF.LFBK & 
+	!clk2_2_OBUF.LFBK & !clk2_3_OBUF.LFBK;
+   clk2<0>.CLK = clk;	// GCK
+   !clk2<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 1 | clk2_1_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 9 | 1 | 2 | 1 | 1 | 1 | 5 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 1 | 7
+INPUTS | 7 | clk2_1_OBUF.LFBK  | busy<1>.LFBK  | ld2  | dt2<1>  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | clk2_0_OBUF.LFBK
+INPUTMC | 7 | 1 | 1 | 1 | 7 | 2 | 3 | 5 | 9 | 1 | 5 | 1 | 11 | 1 | 2
+EQ | 9 | 
+   clk2<1>.D = ld2 & dt2<1>
+	# !ld2 & clk2_0_OBUF.LFBK & clk2_1_OBUF.LFBK
+	# !ld2 & !busy<1>.LFBK & clk2_1_OBUF.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & busy<1>.LFBK & 
+	!clk2_1_OBUF.LFBK & clk2_2_OBUF.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & busy<1>.LFBK & 
+	!clk2_1_OBUF.LFBK & clk2_3_OBUF.LFBK;
+   clk2<1>.CLK = clk;	// GCK
+   !clk2<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 5 | clk2_2_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 9 | 1 | 2 | 1 | 1 | 1 | 5 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 1 | 7
+INPUTS | 7 | clk2_1_OBUF.LFBK  | clk2_3_OBUF.LFBK  | busy<1>.LFBK  | clk2_2_OBUF.LFBK  | ld2  | dt2<2>  | clk2_0_OBUF.LFBK
+INPUTMC | 7 | 1 | 1 | 1 | 11 | 1 | 7 | 1 | 5 | 2 | 3 | 3 | 14 | 1 | 2
+EQ | 8 | 
+   clk2<2>.T = ld2 & dt2<2> & !clk2_2_OBUF.LFBK
+	# ld2 & !dt2<2> & clk2_2_OBUF.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & busy<1>.LFBK & 
+	!clk2_1_OBUF.LFBK & clk2_2_OBUF.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & busy<1>.LFBK & 
+	!clk2_1_OBUF.LFBK & clk2_3_OBUF.LFBK;
+   clk2<2>.CLK = clk;	// GCK
+   !clk2<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 2 | clk3_0_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 4 | 2 | 2 | 2 | 16 | 2 | 4 | 2 | 8
+INPUTS | 7 | clk3_0_OBUF.LFBK  | dt3<0>  | busy<2>.LFBK  | clk3_1_OBUF.LFBK  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | ld3.LFBK
+INPUTMC | 7 | 2 | 2 | 5 | 0 | 2 | 9 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 1
+EQ | 7 | 
+   !clk3<0>.D = !dt3<0> & ld3.LFBK
+	# !ld3.LFBK & clk3_0_OBUF.LFBK & busy<2>.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & !busy<2>.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & !clk3_1_OBUF.LFBK & 
+	!clk3_2_OBUF.LFBK & !clk3_3_OBUF.LFBK;
+   clk3<0>.CLK = clk;	// GCK
+   !clk3<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 16 | clk3_1_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 9 | 2 | 2 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 2 | 9
+INPUTS | 7 | clk3_1_OBUF.LFBK  | ld3.LFBK  | busy<2>.LFBK  | dt3<1>  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | clk3_0_OBUF.LFBK
+INPUTMC | 7 | 2 | 16 | 2 | 1 | 2 | 9 | 5 | 17 | 2 | 4 | 2 | 8 | 2 | 2
+EQ | 9 | 
+   clk3<1>.D = dt3<1> & ld3.LFBK
+	# !ld3.LFBK & clk3_0_OBUF.LFBK & clk3_1_OBUF.LFBK
+	# !ld3.LFBK & !busy<2>.LFBK & clk3_1_OBUF.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & busy<2>.LFBK & 
+	!clk3_1_OBUF.LFBK & clk3_2_OBUF.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & busy<2>.LFBK & 
+	!clk3_1_OBUF.LFBK & clk3_3_OBUF.LFBK;
+   clk3<1>.CLK = clk;	// GCK
+   !clk3<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 4 | clk3_2_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 9 | 2 | 2 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 2 | 9
+INPUTS | 7 | clk3_1_OBUF.LFBK  | clk3_3_OBUF.LFBK  | ld3.LFBK  | busy<2>.LFBK  | clk3_2_OBUF.LFBK  | dt3<2>  | clk3_0_OBUF.LFBK
+INPUTMC | 7 | 2 | 16 | 2 | 8 | 2 | 1 | 2 | 9 | 2 | 4 | 3 | 0 | 2 | 2
+EQ | 8 | 
+   clk3<2>.T = dt3<2> & ld3.LFBK & !clk3_2_OBUF.LFBK
+	# !dt3<2> & ld3.LFBK & clk3_2_OBUF.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & busy<2>.LFBK & 
+	!clk3_1_OBUF.LFBK & clk3_2_OBUF.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & busy<2>.LFBK & 
+	!clk3_1_OBUF.LFBK & clk3_3_OBUF.LFBK;
+   clk3<2>.CLK = clk;	// GCK
+   !clk3<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 4 | clk1_3_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 7 | 0 | 2 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 0 | 17
+INPUTS | 7 | ld1.LFBK  | dt1<3>.LFBK  | clk1_0_OBUF.LFBK  | clk1_1_OBUF.LFBK  | clk1_2_OBUF.LFBK  | busy<0>.LFBK  | clk1_3_OBUF.LFBK
+INPUTMC | 7 | 0 | 9 | 0 | 12 | 0 | 1 | 0 | 16 | 0 | 2 | 0 | 11 | 0 | 4
+EQ | 6 | 
+   !clk1<3>.D = ld1.LFBK & !dt1<3>.LFBK
+	# !ld1.LFBK & !clk1_3_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & !clk1_2_OBUF.LFBK;
+   clk1<3>.CLK = clk;	// GCK
+   !clk1<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 11 | clk2_3_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 9 | 1 | 2 | 1 | 1 | 1 | 5 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 1 | 7
+INPUTS | 7 | clk2_0_OBUF.LFBK  | ld2  | dt2<3>  | clk2_1_OBUF.LFBK  | clk2_2_OBUF.LFBK  | busy<1>.LFBK  | clk2_3_OBUF.LFBK
+INPUTMC | 7 | 1 | 2 | 2 | 3 | 3 | 12 | 1 | 1 | 1 | 5 | 1 | 7 | 1 | 11
+EQ | 6 | 
+   !clk2<3>.D = ld2 & !dt2<3>
+	# !ld2 & !clk2_3_OBUF.LFBK
+	# !ld2 & !clk2_0_OBUF.LFBK & busy<1>.LFBK & 
+	!clk2_1_OBUF.LFBK & !clk2_2_OBUF.LFBK;
+   clk2<3>.CLK = clk;	// GCK
+   !clk2<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 8 | clk3_3_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 9 | 2 | 2 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 2 | 9
+INPUTS | 7 | ld3.LFBK  | clk3_0_OBUF.LFBK  | dt3<3>  | clk3_1_OBUF.LFBK  | clk3_2_OBUF.LFBK  | busy<2>.LFBK  | clk3_3_OBUF.LFBK
+INPUTMC | 7 | 2 | 1 | 2 | 2 | 3 | 17 | 2 | 16 | 2 | 4 | 2 | 9 | 2 | 8
+EQ | 6 | 
+   !clk3<3>.D = !dt3<3> & ld3.LFBK
+	# !ld3.LFBK & !clk3_3_OBUF.LFBK
+	# !ld3.LFBK & !clk3_0_OBUF.LFBK & busy<2>.LFBK & 
+	!clk3_1_OBUF.LFBK & !clk3_2_OBUF.LFBK;
+   clk3<3>.CLK = clk;	// GCK
+   !clk3<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 5 | qdbg_0_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 1 | 2 | 5
+INPUTS | 7 | in_valid  | u_queue/tl<0>.LFBK  | u_queue/tl<1>.LFBK  | u_queue/ct<0>  | in_time<0>  | u_queue/ct<1>  | qdbg_0_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 2 | 5
+INPUTP | 2 | 87 | 41
+EQ | 10 | 
+   qdbg<0>.T = in_valid & !u_queue/ct<0> & in_time<0> & 
+	!qdbg_0_OBUF.LFBK & !u_queue/tl<0>.LFBK & u_queue/tl<1>.LFBK
+	# in_valid & !u_queue/ct<0> & !in_time<0> & 
+	qdbg_0_OBUF.LFBK & !u_queue/tl<0>.LFBK & u_queue/tl<1>.LFBK
+	# in_valid & !u_queue/ct<1> & in_time<0> & 
+	!qdbg_0_OBUF.LFBK & !u_queue/tl<0>.LFBK & u_queue/tl<1>.LFBK
+	# in_valid & !u_queue/ct<1> & !in_time<0> & 
+	qdbg_0_OBUF.LFBK & !u_queue/tl<0>.LFBK & u_queue/tl<1>.LFBK;
+   qdbg<0>.CLK = clk;	// GCK
+   !qdbg<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 1 | qdbg_10_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 6 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 8 | 3 | 9 | 3 | 15
+INPUTS | 11 | qdbg_18_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_2_OBUF.LFBK  | qdbg_11_OBUF.EXP  | qdbg_10_OBUF.LFBK
+INPUTMC | 11 | 3 | 5 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 3 | 10 | 3 | 2 | 3 | 1
+EXPORTS | 1 | 3 | 0
+IMPORTS | 1 | 3 | 2
+EQ | 21 | 
+   qdbg<10>.T = ;Imported pterms FB4_3
+	  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<2> & !qdbg_10_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<2> & qdbg_10_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<2> & !qdbg_10_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<2> & qdbg_10_OBUF.LFBK;
+   qdbg<10>.CLK = clk;	// GCK
+   !qdbg<10>.AR = rst_n;	// GSR
+    qdbg_10_OBUF.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_2_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_18_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 2 | qdbg_11_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 6 | 3 | 1 | 3 | 2 | 3 | 11 | 3 | 13 | 3 | 3 | 3 | 16
+INPUTS | 10 | in_valid  | qdbg_10_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<3>  | in_time<2>  | u_queue/ct<1>  | EXP4_.EXP  | qdbg_11_OBUF.LFBK
+INPUTMC | 7 | 3 | 1 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 3 | 3 | 2
+INPUTP | 3 | 87 | 107 | 126
+EXPORTS | 1 | 3 | 1
+IMPORTS | 1 | 3 | 3
+EQ | 19 | 
+   qdbg<11>.T = in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<3> & qdbg_11_OBUF.LFBK
+;Imported pterms FB4_4
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<3> & !qdbg_11_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<3> & !qdbg_11_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<3> & qdbg_11_OBUF.LFBK;
+   qdbg<11>.CLK = clk;	// GCK
+   !qdbg<11>.AR = rst_n;	// GSR
+    qdbg_11_OBUF.EXP  =  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<2> & !qdbg_10_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<2> & qdbg_10_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<2> & !qdbg_10_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<2> & qdbg_10_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 4 | qdbg_12_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 1 | 3 | 4
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<0>  | u_queue/ct<1>  | qdbg_12_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 4
+INPUTP | 2 | 87 | 127
+EQ | 10 | 
+   qdbg<12>.T = in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<0> & !qdbg_12_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<0> & qdbg_12_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<0> & !qdbg_12_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<0> & qdbg_12_OBUF.LFBK;
+   qdbg<12>.CLK = clk;	// GCK
+   !qdbg<12>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 7 | qdbg_13_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 3 | 2 | 7 | 2 | 17 | 2 | 0
+INPUTS | 7 | in_valid  | u_queue/tl<0>.LFBK  | u_queue/tl<1>.LFBK  | u_queue/ct<0>  | in_num<1>  | u_queue/ct<1>  | qdbg_13_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 2 | 7
+INPUTP | 2 | 87 | 93
+EQ | 10 | 
+   qdbg<13>.T = in_valid & !u_queue/ct<0> & in_num<1> & 
+	u_queue/tl<0>.LFBK & !u_queue/tl<1>.LFBK & !qdbg_13_OBUF.LFBK
+	# in_valid & !u_queue/ct<0> & !in_num<1> & 
+	u_queue/tl<0>.LFBK & !u_queue/tl<1>.LFBK & qdbg_13_OBUF.LFBK
+	# in_valid & !u_queue/ct<1> & in_num<1> & 
+	u_queue/tl<0>.LFBK & !u_queue/tl<1>.LFBK & !qdbg_13_OBUF.LFBK
+	# in_valid & !u_queue/ct<1> & !in_num<1> & 
+	u_queue/tl<0>.LFBK & !u_queue/tl<1>.LFBK & qdbg_13_OBUF.LFBK;
+   qdbg<13>.CLK = clk;	// GCK
+   !qdbg<13>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 1 | qdbg_14_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 3 | 4 | 0 | 4 | 2 | 4 | 16
+INPUTS | 11 | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_5_OBUF.LFBK  | qdbg<13>.PIN  | qdbg_15_OBUF.EXP  | qdbg_21_OBUF.LFBK
+INPUTMC | 10 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 4 | 10 | 4 | 2 | 4 | 5
+INPUTP | 1 | 49
+EXPORTS | 1 | 4 | 0
+IMPORTS | 1 | 4 | 2
+EQ | 21 | 
+   qdbg<14>.T = ;Imported pterms FB5_3
+	  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<2> & !qdbg_14_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<2> & qdbg_14_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<2> & !qdbg_14_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<2> & qdbg_14_OBUF.LFBK;
+   qdbg<14>.CLK = clk;	// GCK
+   !qdbg<14>.AR = rst_n;	// GSR
+    qdbg_14_OBUF.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_5_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_5_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<13>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<13>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_21_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 2 | qdbg_15_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 4 | 1 | 4 | 2 | 4 | 8 | 4 | 3 | 4 | 14
+INPUTS | 10 | in_valid  | qdbg_14_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<3>  | in_num<2>  | u_queue/ct<1>  | EXP8_.EXP  | qdbg_15_OBUF.LFBK
+INPUTMC | 7 | 4 | 1 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 4 | 3 | 4 | 2
+INPUTP | 3 | 87 | 56 | 91
+EXPORTS | 1 | 4 | 1
+IMPORTS | 1 | 4 | 3
+EQ | 19 | 
+   qdbg<15>.T = in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<3> & qdbg_15_OBUF.LFBK
+;Imported pterms FB5_4
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<3> & !qdbg_15_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<3> & !qdbg_15_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<3> & qdbg_15_OBUF.LFBK;
+   qdbg<15>.CLK = clk;	// GCK
+   !qdbg<15>.AR = rst_n;	// GSR
+    qdbg_15_OBUF.EXP  =  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<2> & !qdbg_14_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<2> & qdbg_14_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<2> & !qdbg_14_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<2> & qdbg_14_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 10 | qdbg_16_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 1 | 1 | 10
+INPUTS | 7 | in_valid  | u_queue/ct<0>.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<1>.LFBK  | in_time<0>  | qdbg_16_OBUF.LFBK
+INPUTMC | 5 | 1 | 12 | 2 | 15 | 2 | 12 | 1 | 6 | 1 | 10
+INPUTP | 2 | 87 | 41
+EQ | 10 | 
+   qdbg<16>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	in_time<0> & !qdbg_16_OBUF.LFBK & !u_queue/ct<0>.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	in_time<0> & !qdbg_16_OBUF.LFBK & !u_queue/ct<1>.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!in_time<0> & qdbg_16_OBUF.LFBK & !u_queue/ct<0>.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!in_time<0> & qdbg_16_OBUF.LFBK & !u_queue/ct<1>.LFBK;
+   qdbg<16>.CLK = clk;	// GCK
+   !qdbg<16>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 1 | qdbg_17_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 8 | 5 | 0 | 5 | 4 | 5 | 9 | 5 | 17 | 5 | 2 | 5 | 3 | 5 | 10 | 5 | 16
+INPUTS | 11 | qdbg<16>.PIN  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<8>.PIN  | EXP12_.EXP  | qdbg<0>.PIN
+INPUTMC | 8 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 5 | 2
+INPUTP | 3 | 8 | 124 | 47
+EXPORTS | 1 | 5 | 0
+IMPORTS | 1 | 5 | 2
+EQ | 21 | 
+   qdbg<17>.T = ;Imported pterms FB6_3
+	  in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<1> & !qdbg_17_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<1> & qdbg_17_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<1> & !qdbg_17_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<1> & qdbg_17_OBUF.LFBK;
+   qdbg<17>.CLK = clk;	// GCK
+   !qdbg<17>.AR = rst_n;	// GSR
+    qdbg_17_OBUF.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<0>.PIN
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<0>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<8>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<8>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<16>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 5 | qdbg_18_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 7 | 3 | 1 | 3 | 5 | 3 | 8 | 3 | 9 | 3 | 14 | 3 | 0 | 3 | 15
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<2>  | u_queue/ct<1>  | qdbg_18_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 5
+INPUTP | 2 | 87 | 126
+EQ | 10 | 
+   qdbg<18>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<2> & !qdbg_18_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<2> & qdbg_18_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<2> & !qdbg_18_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<2> & qdbg_18_OBUF.LFBK;
+   qdbg<18>.CLK = clk;	// GCK
+   !qdbg<18>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 7 | qdbg_19_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 7 | 3 | 8 | 3 | 7 | 3 | 11 | 3 | 12 | 3 | 17 | 3 | 6 | 3 | 16
+INPUTS | 10 | in_valid  | qdbg_20_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<3>  | u_queue/ct<1>  | in_num<0>  | EXP5_.EXP  | qdbg_19_OBUF.LFBK
+INPUTMC | 7 | 3 | 8 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 6 | 3 | 7
+INPUTP | 3 | 87 | 107 | 127
+EXPORTS | 1 | 3 | 8
+IMPORTS | 1 | 3 | 6
+EQ | 15 | 
+   qdbg<19>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<3> & !qdbg_19_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<3> & qdbg_19_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<3> & qdbg_19_OBUF.LFBK
+;Imported pterms FB4_7
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<3> & !qdbg_19_OBUF.LFBK;
+   qdbg<19>.CLK = clk;	// GCK
+   !qdbg<19>.AR = rst_n;	// GSR
+    qdbg_19_OBUF.EXP  =  in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<0> & !qdbg_20_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<0> & !qdbg_20_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 4 | qdbg_1_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 1 | 4 | 4
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<1>  | u_queue/ct<1>  | qdbg_1_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 4 | 4
+INPUTP | 2 | 87 | 101
+EQ | 10 | 
+   qdbg<1>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<1> & !qdbg_1_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<1> & qdbg_1_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<1> & !qdbg_1_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<1> & qdbg_1_OBUF.LFBK;
+   qdbg<1>.CLK = clk;	// GCK
+   !qdbg<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 8 | qdbg_20_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 3 | 3 | 9 | 3 | 7 | 3 | 8
+INPUTS | 14 | in_valid  | qdbg_10_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<0>  | u_queue/ct<1>  | qdbg_18_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | qdbg_2_OBUF.LFBK  | qdbg_19_OBUF.EXP  | qdbg_20_OBUF.LFBK
+INPUTMC | 12 | 3 | 1 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 5 | 1 | 8 | 0 | 11 | 1 | 9 | 3 | 10 | 3 | 7 | 3 | 8
+INPUTP | 2 | 87 | 127
+EXPORTS | 1 | 3 | 9
+IMPORTS | 1 | 3 | 7
+EQ | 17 | 
+   qdbg<20>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<0> & qdbg_20_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<0> & qdbg_20_OBUF.LFBK
+;Imported pterms FB4_8
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<0> & !qdbg_20_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<0> & !qdbg_20_OBUF.LFBK;
+   qdbg<20>.CLK = clk;	// GCK
+   !qdbg<20>.AR = rst_n;	// GSR
+    qdbg_20_OBUF.EXP  =  u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_18_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 5 | qdbg_21_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 4 | 1 | 4 | 5 | 4 | 11 | 4 | 12 | 4 | 0
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<1>  | u_queue/ct<1>  | qdbg_21_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 4 | 5
+INPUTP | 2 | 87 | 93
+EQ | 10 | 
+   qdbg<21>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<1> & !qdbg_21_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<1> & qdbg_21_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<1> & !qdbg_21_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<1> & qdbg_21_OBUF.LFBK;
+   qdbg<21>.CLK = clk;	// GCK
+   !qdbg<21>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 7 | qdbg_22_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 4 | 8 | 4 | 7 | 4 | 17 | 4 | 6 | 4 | 16
+INPUTS | 10 | in_valid  | qdbg_23_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<2>  | u_queue/ct<1>  | in_num<3>  | EXP9_.EXP  | qdbg_22_OBUF.LFBK
+INPUTMC | 7 | 4 | 8 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 4 | 6 | 4 | 7
+INPUTP | 3 | 87 | 91 | 56
+EXPORTS | 1 | 4 | 8
+IMPORTS | 1 | 4 | 6
+EQ | 17 | 
+   qdbg<22>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<2> & qdbg_22_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<2> & qdbg_22_OBUF.LFBK
+;Imported pterms FB5_7
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<2> & !qdbg_22_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<2> & !qdbg_22_OBUF.LFBK;
+   qdbg<22>.CLK = clk;	// GCK
+   !qdbg<22>.AR = rst_n;	// GSR
+    qdbg_22_OBUF.EXP  =  in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<3> & !qdbg_23_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<3> & !qdbg_23_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<3> & qdbg_23_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 8 | qdbg_23_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 4 | 9 | 4 | 7 | 4 | 8 | 4 | 15 | 4 | 14
+INPUTS | 13 | in_valid  | qdbg_15_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<3>  | qdbg_7_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | u_queue/ct<1>  | qdbg_22_OBUF.EXP  | qdbg_23_OBUF.LFBK
+INPUTMC | 11 | 4 | 2 | 2 | 15 | 2 | 12 | 1 | 12 | 4 | 13 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 6 | 4 | 7 | 4 | 8
+INPUTP | 2 | 87 | 56
+EXPORTS | 1 | 4 | 9
+IMPORTS | 1 | 4 | 7
+EQ | 19 | 
+   qdbg<23>.T = in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<3> & qdbg_23_OBUF.LFBK
+;Imported pterms FB5_8
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<3> & !qdbg_23_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<3> & !qdbg_23_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<3> & qdbg_23_OBUF.LFBK;
+   qdbg<23>.CLK = clk;	// GCK
+   !qdbg<23>.AR = rst_n;	// GSR
+    qdbg_23_OBUF.EXP  =  u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_7_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_23_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 10 | qdbg_2_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 6 | 3 | 11 | 3 | 1 | 3 | 8 | 3 | 10 | 3 | 9 | 3 | 15
+INPUTS | 9 | in_valid  | qdbg_3_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<2>  | u_queue/ct<1>  | in_time<3>  | qdbg_2_OBUF.LFBK
+INPUTMC | 6 | 3 | 11 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 10
+INPUTP | 3 | 87 | 126 | 107
+EXPORTS | 1 | 3 | 11
+EQ | 12 | 
+   qdbg<2>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<2> & !qdbg_2_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<2> & qdbg_2_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<2> & !qdbg_2_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<2> & qdbg_2_OBUF.LFBK;
+   qdbg<2>.CLK = clk;	// GCK
+   !qdbg<2>.AR = rst_n;	// GSR
+    qdbg_2_OBUF.EXP  =  in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<3> & !qdbg_3_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 11 | qdbg_3_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 3 | 12 | 3 | 10 | 3 | 11 | 3 | 13 | 3 | 16
+INPUTS | 14 | in_valid  | qdbg_11_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<3>  | u_queue/ct<1>  | qdbg_19_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | qdbg_2_OBUF.EXP  | qdbg_3_OBUF.LFBK
+INPUTMC | 12 | 3 | 2 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 7 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 3 | 10 | 3 | 11
+INPUTP | 2 | 87 | 107
+EXPORTS | 1 | 3 | 12
+IMPORTS | 1 | 3 | 10
+EQ | 15 | 
+   qdbg<3>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<3> & !qdbg_3_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<3> & qdbg_3_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<3> & qdbg_3_OBUF.LFBK
+;Imported pterms FB4_11
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<3> & !qdbg_3_OBUF.LFBK;
+   qdbg<3>.CLK = clk;	// GCK
+   !qdbg<3>.AR = rst_n;	// GSR
+    qdbg_3_OBUF.EXP  =  !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_11_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_19_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 7 | qdbg_4_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 3 | 5 | 8 | 5 | 7 | 5 | 6
+INPUTS | 15 | in_valid  | qdbg<0>.PIN  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<0>  | u_queue/ct<1>  | qdbg<16>.PIN  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | qdbg<8>.PIN  | dt1<0>.EXP  | qdbg_4_OBUF.LFBK
+INPUTMC | 10 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 5 | 6 | 5 | 7
+INPUTP | 5 | 87 | 47 | 127 | 8 | 124
+EXPORTS | 1 | 5 | 8
+IMPORTS | 1 | 5 | 6
+EQ | 17 | 
+   qdbg<4>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<0> & qdbg_4_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<0> & qdbg_4_OBUF.LFBK
+;Imported pterms FB6_7
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<0> & !qdbg_4_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<0> & !qdbg_4_OBUF.LFBK;
+   qdbg<4>.CLK = clk;	// GCK
+   !qdbg<4>.AR = rst_n;	// GSR
+    qdbg_4_OBUF.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<0>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<8>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<16>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 10 | qdbg_5_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 4 | 11 | 4 | 1 | 4 | 10 | 4 | 9 | 4 | 12
+INPUTS | 10 | in_valid  | qdbg_6_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<1>  | u_queue/ct<1>  | in_num<2>  | dn1<3>.EXP  | qdbg_5_OBUF.LFBK
+INPUTMC | 7 | 4 | 11 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 4 | 9 | 4 | 10
+INPUTP | 3 | 87 | 93 | 91
+EXPORTS | 1 | 4 | 11
+IMPORTS | 1 | 4 | 9
+EQ | 15 | 
+   qdbg<5>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<1> & !qdbg_5_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<1> & qdbg_5_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<1> & qdbg_5_OBUF.LFBK
+;Imported pterms FB5_10
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<1> & !qdbg_5_OBUF.LFBK;
+   qdbg<5>.CLK = clk;	// GCK
+   !qdbg<5>.AR = rst_n;	// GSR
+    qdbg_5_OBUF.EXP  =  in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<2> & !qdbg_6_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<2> & !qdbg_6_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 11 | qdbg_6_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 4 | 4 | 12 | 4 | 10 | 4 | 11 | 4 | 16
+INPUTS | 15 | in_valid  | qdbg_21_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<2>  | u_queue/ct<1>  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | qdbg_5_OBUF.LFBK  | qdbg<13>.PIN  | qdbg_5_OBUF.EXP  | qdbg_6_OBUF.LFBK
+INPUTMC | 12 | 4 | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 4 | 10 | 4 | 10 | 4 | 11
+INPUTP | 3 | 87 | 91 | 49
+EXPORTS | 1 | 4 | 12
+IMPORTS | 1 | 4 | 10
+EQ | 17 | 
+   qdbg<6>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<2> & qdbg_6_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<2> & qdbg_6_OBUF.LFBK
+;Imported pterms FB5_11
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<2> & !qdbg_6_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<2> & !qdbg_6_OBUF.LFBK;
+   qdbg<6>.CLK = clk;	// GCK
+   !qdbg<6>.AR = rst_n;	// GSR
+    qdbg_6_OBUF.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_5_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<13>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_21_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 13 | qdbg_7_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 5 | 4 | 12 | 4 | 8 | 4 | 13 | 4 | 9 | 4 | 14
+INPUTS | 12 | in_valid  | qdbg<13>.PIN  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<3>  | u_queue/ct<1>  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | qdbg_7_OBUF.LFBK
+INPUTMC | 9 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 4 | 13
+INPUTP | 3 | 87 | 49 | 56
+EXPORTS | 1 | 4 | 12
+EQ | 12 | 
+   qdbg<7>.T = in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<3> & !qdbg_7_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_num<3> & qdbg_7_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<3> & !qdbg_7_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<3> & qdbg_7_OBUF.LFBK;
+   qdbg<7>.CLK = clk;	// GCK
+   !qdbg<7>.AR = rst_n;	// GSR
+    qdbg_7_OBUF.EXP  =  !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<13>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 13 | qdbg_8_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 3 | 3 | 12 | 3 | 13 | 3 | 14
+INPUTS | 14 | in_valid  | qdbg_11_OBUF.LFBK  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<0>  | u_queue/ct<1>  | qdbg_3_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | dt2<2>.EXP  | qdbg_8_OBUF.LFBK
+INPUTMC | 12 | 3 | 2 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 3 | 11 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 3 | 14 | 3 | 13
+INPUTP | 2 | 87 | 41
+EXPORTS | 1 | 3 | 12
+IMPORTS | 1 | 3 | 14
+EQ | 15 | 
+   qdbg<8>.T = in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<0> & !qdbg_8_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<0> & qdbg_8_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<0> & qdbg_8_OBUF.LFBK
+;Imported pterms FB4_15
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<0> & !qdbg_8_OBUF.LFBK;
+   qdbg<8>.CLK = clk;	// GCK
+   !qdbg<8>.AR = rst_n;	// GSR
+    qdbg_8_OBUF.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_3_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_11_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 13 | qdbg_9_OBUF
+ATTRIBUTES | 4694786 | 0
+OUTPUTMC | 6 | 5 | 14 | 5 | 13 | 5 | 4 | 5 | 3 | 5 | 10 | 5 | 16
+INPUTS | 12 | in_valid  | qdbg<14>.PIN  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<1>  | u_queue/ct<1>  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | qdbg_9_OBUF.LFBK
+INPUTMC | 9 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 5 | 13
+INPUTP | 3 | 87 | 67 | 101
+EXPORTS | 1 | 5 | 14
+EQ | 12 | 
+   qdbg<9>.T = in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<1> & !qdbg_9_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<1> & qdbg_9_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<1> & !qdbg_9_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<1> & qdbg_9_OBUF.LFBK;
+   qdbg<9>.CLK = clk;	// GCK
+   !qdbg<9>.AR = rst_n;	// GSR
+    qdbg_9_OBUF.EXP  =  !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<14>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 7 | num1_0_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 0 | 7
+INPUTS | 7 | ld1.LFBK  | dn1<0>.LFBK  | clk1_1_OBUF.LFBK  | clk1_2_OBUF.LFBK  | clk1_3_OBUF.LFBK  | busy<0>.LFBK  | num1_0_OBUF.LFBK
+INPUTMC | 7 | 0 | 9 | 0 | 13 | 0 | 16 | 0 | 2 | 0 | 4 | 0 | 11 | 0 | 7
+EQ | 6 | 
+   !num1<0>.D = ld1.LFBK & !dn1<0>.LFBK
+	# !ld1.LFBK & !num1_0_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_1_OBUF.LFBK & !ld1.LFBK & 
+	!clk1_3_OBUF.LFBK & !clk1_2_OBUF.LFBK;
+   num1<0>.CLK = clk;	// GCK
+   !num1<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 8 | num1_1_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 0 | 8
+INPUTS | 7 | ld1.LFBK  | clk1_1_OBUF.LFBK  | dn1<1>  | clk1_2_OBUF.LFBK  | clk1_3_OBUF.LFBK  | busy<0>.LFBK  | num1_1_OBUF.LFBK
+INPUTMC | 7 | 0 | 9 | 0 | 16 | 2 | 17 | 0 | 2 | 0 | 4 | 0 | 11 | 0 | 8
+EQ | 6 | 
+   !num1<1>.D = !dn1<1> & ld1.LFBK
+	# !ld1.LFBK & !num1_1_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_1_OBUF.LFBK & !ld1.LFBK & 
+	!clk1_3_OBUF.LFBK & !clk1_2_OBUF.LFBK;
+   num1<1>.CLK = clk;	// GCK
+   !num1<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 10 | num1_2_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 2 | 0 | 11 | 0 | 10
+INPUTS | 7 | ld1.LFBK  | clk1_1_OBUF.LFBK  | dn1<2>  | clk1_2_OBUF.LFBK  | clk1_3_OBUF.LFBK  | busy<0>.LFBK  | num1_2_OBUF.LFBK
+INPUTMC | 7 | 0 | 9 | 0 | 16 | 1 | 17 | 0 | 2 | 0 | 4 | 0 | 11 | 0 | 10
+EXPORTS | 1 | 0 | 11
+EQ | 8 | 
+   !num1<2>.D = !dn1<2> & ld1.LFBK
+	# !ld1.LFBK & !num1_2_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_1_OBUF.LFBK & !ld1.LFBK & 
+	!clk1_3_OBUF.LFBK & !clk1_2_OBUF.LFBK;
+   num1<2>.CLK = clk;	// GCK
+   !num1<2>.AR = rst_n;	// GSR
+    num1_2_OBUF.EXP  =  !clk1_1_OBUF.LFBK & !ld1.LFBK & !clk1_3_OBUF.LFBK & 
+	!clk1_2_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 14 | num1_3_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 2 | 0 | 13 | 0 | 14
+INPUTS | 12 | ld1.LFBK  | clk1_1_OBUF.LFBK  | dn1<3>  | clk1_2_OBUF.LFBK  | clk1_3_OBUF.LFBK  | busy<0>.LFBK  | qdbg<12>.PIN  | qdbg<4>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | u_queue/ct<1>  | num1_3_OBUF.LFBK
+INPUTMC | 10 | 0 | 9 | 0 | 16 | 4 | 9 | 0 | 2 | 0 | 4 | 0 | 11 | 1 | 8 | 1 | 9 | 1 | 6 | 0 | 14
+INPUTP | 2 | 116 | 95
+EXPORTS | 1 | 0 | 13
+EQ | 10 | 
+   !num1<3>.D = !dn1<3> & ld1.LFBK
+	# !ld1.LFBK & !num1_3_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_1_OBUF.LFBK & !ld1.LFBK & 
+	!clk1_3_OBUF.LFBK & !clk1_2_OBUF.LFBK;
+   num1<3>.CLK = clk;	// GCK
+   !num1<3>.AR = rst_n;	// GSR
+    num1_3_OBUF.EXP  =  u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<12>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 13 | num2_0_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 1 | 13
+INPUTS | 7 | clk2_1_OBUF.LFBK  | ld2  | dn2<0>  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | busy<1>.LFBK  | num2_0_OBUF.LFBK
+INPUTMC | 7 | 1 | 1 | 2 | 3 | 0 | 15 | 1 | 5 | 1 | 11 | 1 | 7 | 1 | 13
+EQ | 6 | 
+   !num2<0>.D = ld2 & !dn2<0>
+	# !ld2 & !num2_0_OBUF.LFBK
+	# !ld2 & busy<1>.LFBK & !clk2_1_OBUF.LFBK & 
+	!clk2_2_OBUF.LFBK & !clk2_3_OBUF.LFBK;
+   num2<0>.CLK = clk;	// GCK
+   !num2<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 14 | num2_1_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 1 | 14
+INPUTS | 7 | clk2_1_OBUF.LFBK  | ld2  | dn2<1>  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | busy<1>.LFBK  | num2_1_OBUF.LFBK
+INPUTMC | 7 | 1 | 1 | 2 | 3 | 4 | 12 | 1 | 5 | 1 | 11 | 1 | 7 | 1 | 14
+EQ | 6 | 
+   !num2<1>.D = ld2 & !dn2<1>
+	# !ld2 & !num2_1_OBUF.LFBK
+	# !ld2 & busy<1>.LFBK & !clk2_1_OBUF.LFBK & 
+	!clk2_2_OBUF.LFBK & !clk2_3_OBUF.LFBK;
+   num2<1>.CLK = clk;	// GCK
+   !num2<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 15 | num2_2_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 1 | 15
+INPUTS | 7 | clk2_1_OBUF.LFBK  | ld2  | dn2<2>  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | busy<1>.LFBK  | num2_2_OBUF.LFBK
+INPUTMC | 7 | 1 | 1 | 2 | 3 | 5 | 14 | 1 | 5 | 1 | 11 | 1 | 7 | 1 | 15
+EQ | 6 | 
+   !num2<2>.D = ld2 & !dn2<2>
+	# !ld2 & !num2_2_OBUF.LFBK
+	# !ld2 & busy<1>.LFBK & !clk2_1_OBUF.LFBK & 
+	!clk2_2_OBUF.LFBK & !clk2_3_OBUF.LFBK;
+   num2<2>.CLK = clk;	// GCK
+   !num2<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 16 | num2_3_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 2 | 1 | 17 | 1 | 16
+INPUTS | 13 | clk2_1_OBUF.LFBK  | ld2  | dn2<3>  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | busy<1>.LFBK  | u_queue/hd<1>.LFBK  | qdbg<6>.PIN  | u_queue/hd<0>.LFBK  | busy<0>  | u_queue/ct<1>.LFBK  | qdbg<22>.PIN  | num2_3_OBUF.LFBK
+INPUTMC | 11 | 1 | 1 | 2 | 3 | 5 | 12 | 1 | 5 | 1 | 11 | 1 | 7 | 1 | 8 | 1 | 9 | 0 | 11 | 1 | 6 | 1 | 16
+INPUTP | 2 | 82 | 76
+EXPORTS | 1 | 1 | 17
+EQ | 10 | 
+   !num2<3>.D = ld2 & !dn2<3>
+	# !ld2 & !num2_3_OBUF.LFBK
+	# !ld2 & busy<1>.LFBK & !clk2_1_OBUF.LFBK & 
+	!clk2_2_OBUF.LFBK & !clk2_3_OBUF.LFBK;
+   num2<3>.CLK = clk;	// GCK
+   !num2<3>.AR = rst_n;	// GSR
+    num2_3_OBUF.EXP  =  !busy<0> & u_queue/ct<1>.LFBK & 
+	u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK & qdbg<6>.PIN
+	# !busy<0> & u_queue/ct<1>.LFBK & 
+	!u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK & qdbg<22>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 10 | num3_0_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 2 | 10
+INPUTS | 7 | ld3.LFBK  | clk3_1_OBUF.LFBK  | dn3<0>  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | busy<2>.LFBK  | num3_0_OBUF.LFBK
+INPUTMC | 7 | 2 | 1 | 2 | 16 | 0 | 0 | 2 | 4 | 2 | 8 | 2 | 9 | 2 | 10
+EQ | 6 | 
+   !num3<0>.D = !dn3<0> & ld3.LFBK
+	# !ld3.LFBK & !num3_0_OBUF.LFBK
+	# !ld3.LFBK & busy<2>.LFBK & !clk3_1_OBUF.LFBK & 
+	!clk3_2_OBUF.LFBK & !clk3_3_OBUF.LFBK;
+   num3<0>.CLK = clk;	// GCK
+   !num3<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 11 | num3_1_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 2 | 11
+INPUTS | 7 | ld3.LFBK  | clk3_1_OBUF.LFBK  | dn3<1>  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | busy<2>.LFBK  | num3_1_OBUF.LFBK
+INPUTMC | 7 | 2 | 1 | 2 | 16 | 4 | 0 | 2 | 4 | 2 | 8 | 2 | 9 | 2 | 11
+EQ | 6 | 
+   !num3<1>.D = !dn3<1> & ld3.LFBK
+	# !ld3.LFBK & !num3_1_OBUF.LFBK
+	# !ld3.LFBK & busy<2>.LFBK & !clk3_1_OBUF.LFBK & 
+	!clk3_2_OBUF.LFBK & !clk3_3_OBUF.LFBK;
+   num3<1>.CLK = clk;	// GCK
+   !num3<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 13 | num3_2_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 2 | 13
+INPUTS | 7 | ld3.LFBK  | clk3_1_OBUF.LFBK  | dn3<2>  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | busy<2>.LFBK  | num3_2_OBUF.LFBK
+INPUTMC | 7 | 2 | 1 | 2 | 16 | 4 | 17 | 2 | 4 | 2 | 8 | 2 | 9 | 2 | 13
+EQ | 6 | 
+   !num3<2>.D = !dn3<2> & ld3.LFBK
+	# !ld3.LFBK & !num3_2_OBUF.LFBK
+	# !ld3.LFBK & busy<2>.LFBK & !clk3_1_OBUF.LFBK & 
+	!clk3_2_OBUF.LFBK & !clk3_3_OBUF.LFBK;
+   num3<2>.CLK = clk;	// GCK
+   !num3<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 14 | num3_3_OBUF
+ATTRIBUTES | 8889090 | 0
+OUTPUTMC | 1 | 2 | 14
+INPUTS | 7 | ld3.LFBK  | clk3_1_OBUF.LFBK  | dn3<3>  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | busy<2>.LFBK  | num3_3_OBUF.LFBK
+INPUTMC | 7 | 2 | 1 | 2 | 16 | 4 | 15 | 2 | 4 | 2 | 8 | 2 | 9 | 2 | 14
+EQ | 6 | 
+   !num3<3>.D = !dn3<3> & ld3.LFBK
+	# !ld3.LFBK & !num3_3_OBUF.LFBK
+	# !ld3.LFBK & busy<2>.LFBK & !clk3_1_OBUF.LFBK & 
+	!clk3_2_OBUF.LFBK & !clk3_3_OBUF.LFBK;
+   num3<3>.CLK = clk;	// GCK
+   !num3<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 8 | u_queue/hd<1>
+ATTRIBUTES | 4432640 | 0
+OUTPUTMC | 54 | 5 | 15 | 5 | 13 | 0 | 13 | 2 | 17 | 5 | 11 | 4 | 9 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 0 | 12 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 0 | 1 | 0 | 11 | 0 | 14 | 0 | 16 | 5 | 10 | 5 | 16 | 2 | 0 | 3 | 1 | 3 | 8 | 3 | 11 | 3 | 13 | 3 | 15 | 3 | 16 | 4 | 1 | 4 | 8 | 4 | 11 | 4 | 13 | 4 | 14 | 4 | 16 | 5 | 1 | 5 | 3 | 5 | 5 | 5 | 7 | 1 | 16 | 1 | 8 | 1 | 9 | 1 | 17 | 1 | 0
+INPUTS | 5 | fifo_re  | u_queue/ct<1>.LFBK  | u_queue/hd<1>.LFBK  | u_queue/hd<0>.LFBK  | u_queue/ct<0>.LFBK
+INPUTMC | 5 | 2 | 6 | 1 | 6 | 1 | 8 | 1 | 9 | 1 | 12
+EQ | 5 | 
+   !u_queue/hd<1>.T = !fifo_re
+	# !u_queue/ct<0>.LFBK & !u_queue/ct<1>.LFBK
+	# !u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK;
+   u_queue/hd<1>.CLK = clk;	// GCK
+   !u_queue/hd<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 11 | busy<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 63 | 2 | 6 | 4 | 1 | 5 | 13 | 5 | 11 | 5 | 10 | 5 | 7 | 5 | 5 | 5 | 3 | 5 | 1 | 4 | 16 | 2 | 3 | 2 | 1 | 4 | 14 | 2 | 17 | 1 | 17 | 4 | 9 | 4 | 13 | 4 | 12 | 5 | 14 | 5 | 12 | 4 | 11 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 4 | 8 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 5 | 16 | 5 | 15 | 3 | 16 | 1 | 0 | 1 | 16 | 2 | 0 | 3 | 1 | 3 | 8 | 3 | 11 | 3 | 13 | 3 | 15 | 0 | 12 | 0 | 1 | 0 | 16 | 0 | 2 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 0 | 11 | 0 | 9 | 0 | 13 | 0 | 15 | 0 | 0 | 0 | 3 | 0 | 17
+INPUTS | 10 | ld1.LFBK  | qdbg<11>.PIN  | qdbg<19>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<3>.PIN  | num1_2_OBUF.EXP  | busy<0>.LFBK
+INPUTMC | 7 | 0 | 9 | 1 | 8 | 1 | 9 | 1 | 12 | 1 | 6 | 0 | 10 | 0 | 11
+INPUTP | 3 | 113 | 118 | 122
+EXPORTS | 1 | 0 | 12
+IMPORTS | 1 | 0 | 10
+EQ | 14 | 
+   !busy<0>.D = !busy<0>.LFBK & !ld1.LFBK
+;Imported pterms FB1_11
+	# !clk1_1_OBUF.LFBK & !ld1.LFBK & !clk1_3_OBUF.LFBK & 
+	!clk1_2_OBUF.LFBK;
+   busy<0>.CLK = clk;	// GCK
+   !busy<0>.AR = rst_n;	// GSR
+    busy<0>.EXP  =  u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<3>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<11>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<11>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<19>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 9 | u_queue/hd<0>
+ATTRIBUTES | 4432640 | 0
+OUTPUTMC | 54 | 5 | 15 | 5 | 13 | 0 | 13 | 2 | 17 | 5 | 11 | 4 | 9 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 0 | 12 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 0 | 1 | 0 | 11 | 0 | 14 | 0 | 16 | 5 | 10 | 5 | 16 | 2 | 0 | 3 | 1 | 3 | 8 | 3 | 11 | 3 | 13 | 3 | 15 | 3 | 16 | 4 | 1 | 4 | 8 | 4 | 11 | 4 | 13 | 4 | 14 | 4 | 16 | 5 | 1 | 5 | 3 | 5 | 5 | 5 | 7 | 1 | 16 | 1 | 8 | 1 | 9 | 1 | 17 | 1 | 0
+INPUTS | 5 | fifo_re  | u_queue/ct<1>.LFBK  | u_queue/hd<1>.LFBK  | u_queue/hd<0>.LFBK  | u_queue/ct<0>.LFBK
+INPUTMC | 5 | 2 | 6 | 1 | 6 | 1 | 8 | 1 | 9 | 1 | 12
+EQ | 5 | 
+   !u_queue/hd<0>.T = !fifo_re
+	# !u_queue/ct<0>.LFBK & !u_queue/ct<1>.LFBK
+	# u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK;
+   u_queue/hd<0>.CLK = clk;	// GCK
+   !u_queue/hd<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 7 | busy<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 47 | 5 | 16 | 5 | 15 | 5 | 13 | 5 | 11 | 5 | 10 | 5 | 7 | 5 | 1 | 4 | 16 | 4 | 14 | 2 | 3 | 2 | 1 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 2 | 6 | 0 | 1 | 0 | 16 | 3 | 1 | 3 | 11 | 3 | 13 | 3 | 15 | 3 | 16 | 4 | 1 | 4 | 11 | 4 | 13 | 1 | 2 | 1 | 1 | 1 | 5 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 1 | 7
+INPUTS | 5 | clk2_1_OBUF.LFBK  | ld2  | clk2_2_OBUF.LFBK  | clk2_3_OBUF.LFBK  | busy<1>.LFBK
+INPUTMC | 5 | 1 | 1 | 2 | 3 | 1 | 5 | 1 | 11 | 1 | 7
+EQ | 5 | 
+   !busy<1>.D = !ld2 & !busy<1>.LFBK
+	# !ld2 & !clk2_1_OBUF.LFBK & !clk2_2_OBUF.LFBK & 
+	!clk2_3_OBUF.LFBK;
+   busy<1>.CLK = clk;	// GCK
+   !busy<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 9 | ld1
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 10 | 0 | 16 | 0 | 2 | 0 | 4 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 0 | 11 | 0 | 3 | 0 | 17
+INPUTS | 3 | u_queue/ct<0>  | u_queue/ct<1>  | busy<0>.LFBK
+INPUTMC | 3 | 1 | 12 | 1 | 6 | 0 | 11
+EQ | 4 | 
+   ld1.D = u_queue/ct<0> & !busy<0>.LFBK
+	# u_queue/ct<1> & !busy<0>.LFBK;
+   ld1.CLK = clk;	// GCK
+   !ld1.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 3 | ld2
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 9 | 1 | 2 | 1 | 1 | 1 | 5 | 1 | 11 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 1 | 7
+INPUTS | 4 | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>
+INPUTMC | 4 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6
+EQ | 4 | 
+   ld2.D = busy<0> & !busy<1> & u_queue/ct<0>
+	# busy<0> & !busy<1> & u_queue/ct<1>;
+   ld2.CLK = clk;	// GCK
+   !ld2.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 1 | ld3
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 9 | 2 | 2 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 2 | 9
+INPUTS | 5 | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | busy<2>.LFBK
+INPUTMC | 5 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 2 | 9
+EQ | 6 | 
+   ld3.D = busy<0> & busy<1> & u_queue/ct<0> & 
+	!busy<2>.LFBK
+	# busy<0> & busy<1> & u_queue/ct<1> & 
+	!busy<2>.LFBK;
+   ld3.CLK = clk;	// GCK
+   !ld3.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 9 | busy<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 27 | 5 | 16 | 5 | 1 | 4 | 16 | 4 | 14 | 4 | 1 | 3 | 16 | 3 | 1 | 0 | 1 | 3 | 0 | 3 | 17 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 0 | 5 | 17 | 2 | 2 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 2 | 1 | 2 | 9 | 2 | 6
+INPUTS | 5 | busy<2>.LFBK  | clk3_1_OBUF.LFBK  | clk3_2_OBUF.LFBK  | clk3_3_OBUF.LFBK  | ld3.LFBK
+INPUTMC | 5 | 2 | 9 | 2 | 16 | 2 | 4 | 2 | 8 | 2 | 1
+EQ | 5 | 
+   !busy<2>.D = !ld3.LFBK & !busy<2>.LFBK
+	# !ld3.LFBK & !clk3_1_OBUF.LFBK & !clk3_2_OBUF.LFBK & 
+	!clk3_3_OBUF.LFBK;
+   busy<2>.CLK = clk;	// GCK
+   !busy<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 15 | u_queue/tl<0>
+ATTRIBUTES | 4432640 | 0
+OUTPUTMC | 31 | 5 | 6 | 4 | 3 | 3 | 2 | 3 | 4 | 5 | 2 | 3 | 14 | 4 | 2 | 1 | 10 | 4 | 9 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 8 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 4 | 6 | 3 | 3 | 3 | 6 | 2 | 5 | 2 | 7 | 2 | 15 | 2 | 12
+INPUTS | 5 | in_valid  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/tl<1>.LFBK  | u_queue/tl<0>.LFBK
+INPUTMC | 4 | 1 | 12 | 1 | 6 | 2 | 12 | 2 | 15
+INPUTP | 1 | 87
+EQ | 5 | 
+   !u_queue/tl<0>.T = !in_valid
+	# u_queue/ct<0> & u_queue/ct<1>
+	# !u_queue/tl<0>.LFBK & u_queue/tl<1>.LFBK;
+   u_queue/tl<0>.CLK = clk;	// GCK
+   !u_queue/tl<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 12 | u_queue/tl<1>
+ATTRIBUTES | 4432640 | 0
+OUTPUTMC | 31 | 5 | 6 | 4 | 3 | 3 | 2 | 3 | 4 | 5 | 2 | 3 | 14 | 4 | 2 | 1 | 10 | 4 | 9 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 8 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 4 | 6 | 3 | 3 | 3 | 6 | 2 | 5 | 2 | 7 | 2 | 15 | 2 | 12
+INPUTS | 5 | in_valid  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/tl<1>.LFBK  | u_queue/tl<0>.LFBK
+INPUTMC | 4 | 1 | 12 | 1 | 6 | 2 | 12 | 2 | 15
+INPUTP | 1 | 87
+EQ | 5 | 
+   !u_queue/tl<1>.T = !in_valid
+	# u_queue/ct<0> & u_queue/ct<1>
+	# !u_queue/tl<0>.LFBK & !u_queue/tl<1>.LFBK;
+   u_queue/tl<1>.CLK = clk;	// GCK
+   !u_queue/tl<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 12 | u_queue/ct<0>
+ATTRIBUTES | 4432640 | 0
+OUTPUTMC | 73 | 2 | 5 | 0 | 16 | 3 | 2 | 3 | 4 | 2 | 7 | 3 | 16 | 4 | 2 | 5 | 16 | 4 | 16 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 8 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 5 | 11 | 5 | 10 | 0 | 9 | 2 | 3 | 2 | 1 | 2 | 15 | 2 | 12 | 5 | 5 | 5 | 2 | 0 | 13 | 2 | 17 | 5 | 1 | 4 | 9 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 0 | 12 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 2 | 6 | 0 | 1 | 0 | 11 | 3 | 1 | 3 | 3 | 3 | 15 | 4 | 1 | 4 | 3 | 4 | 6 | 4 | 14 | 1 | 10 | 1 | 8 | 1 | 9 | 1 | 12 | 1 | 6 | 1 | 17
+INPUTS | 4 | in_valid  | fifo_re  | u_queue/ct<1>.LFBK  | u_queue/ct<0>.LFBK
+INPUTMC | 3 | 2 | 6 | 1 | 6 | 1 | 12
+INPUTP | 1 | 87
+EQ | 11 | 
+   !u_queue/ct<0>.T = !in_valid & !fifo_re
+	# !in_valid & !u_queue/ct<0>.LFBK & 
+	!u_queue/ct<1>.LFBK
+	# !fifo_re & u_queue/ct<0>.LFBK & 
+	u_queue/ct<1>.LFBK
+	# in_valid & fifo_re & u_queue/ct<0>.LFBK & 
+	!u_queue/ct<1>.LFBK
+	# in_valid & fifo_re & !u_queue/ct<0>.LFBK & 
+	u_queue/ct<1>.LFBK;
+   u_queue/ct<0>.CLK = clk;	// GCK
+   !u_queue/ct<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 6 | u_queue/ct<1>
+ATTRIBUTES | 4432640 | 0
+OUTPUTMC | 80 | 2 | 5 | 2 | 0 | 3 | 1 | 3 | 4 | 2 | 7 | 3 | 16 | 4 | 1 | 5 | 16 | 4 | 16 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 6 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 5 | 11 | 5 | 10 | 0 | 9 | 2 | 3 | 2 | 1 | 2 | 15 | 2 | 12 | 5 | 5 | 5 | 3 | 0 | 13 | 2 | 17 | 5 | 2 | 4 | 9 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 0 | 12 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 2 | 6 | 0 | 1 | 0 | 11 | 0 | 14 | 0 | 16 | 5 | 1 | 5 | 15 | 3 | 2 | 3 | 3 | 3 | 6 | 3 | 15 | 4 | 2 | 4 | 3 | 4 | 8 | 4 | 14 | 1 | 10 | 1 | 16 | 1 | 8 | 1 | 9 | 1 | 12 | 1 | 6 | 1 | 17 | 1 | 0
+INPUTS | 4 | in_valid  | u_queue/ct<1>.LFBK  | fifo_re  | u_queue/ct<0>.LFBK
+INPUTMC | 3 | 1 | 6 | 2 | 6 | 1 | 12
+INPUTP | 1 | 87
+EQ | 6 | 
+   u_queue/ct<1>.T = in_valid & !fifo_re & u_queue/ct<0>.LFBK & 
+	!u_queue/ct<1>.LFBK
+	# !in_valid & fifo_re & !u_queue/ct<0>.LFBK & 
+	u_queue/ct<1>.LFBK;
+   u_queue/ct<1>.CLK = clk;	// GCK
+   !u_queue/ct<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 13 | dn1<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 0 | 7 | 0 | 13
+INPUTS | 11 | dn1<0>.LFBK  | qdbg<12>.PIN  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<4>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg<20>.PIN  | dt1<3>.EXP  | num1_3_OBUF.EXP  | busy<0>.LFBK
+INPUTMC | 8 | 0 | 13 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 0 | 12 | 0 | 14 | 0 | 11
+INPUTP | 3 | 116 | 95 | 120
+IMPORTS | 2 | 0 | 12 | 0 | 14
+EQ | 18 | 
+   dn1<0>.D = busy<0>.LFBK & dn1<0>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn1<0>.LFBK
+	# u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<20>.PIN
+;Imported pterms FB1_13
+	# !u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<20>.PIN
+;Imported pterms FB1_15
+	# u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<12>.PIN;
+   dn1<0>.CLK = clk;	// GCK
+   !dn1<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 17 | dn1<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 0 | 8 | 2 | 17
+INPUTS | 10 | busy<0>  | qdbg_13_OBUF.LFBK  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<5>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg<21>.PIN  | EXP3_.EXP  | dn1<1>.LFBK
+INPUTMC | 8 | 0 | 11 | 2 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 2 | 0 | 2 | 17
+INPUTP | 2 | 80 | 74
+IMPORTS | 1 | 2 | 0
+EQ | 17 | 
+   dn1<1>.D = busy<0> & dn1<1>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn1<1>.LFBK
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<5>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_13_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<21>.PIN
+;Imported pterms FB3_1
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<5>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_13_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<21>.PIN;
+   dn1<1>.CLK = clk;	// GCK
+   !dn1<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 1 | 17 | dn1<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 0 | 10 | 1 | 17
+INPUTS | 11 | busy<0>  | u_queue/ct<0>.LFBK  | u_queue/ct<1>.LFBK  | u_queue/hd<1>.LFBK  | qdbg<6>.PIN  | u_queue/hd<0>.LFBK  | qdbg<14>.PIN  | qdbg<22>.PIN  | EXP2_.EXP  | num2_3_OBUF.EXP  | dn1<2>.LFBK
+INPUTMC | 8 | 0 | 11 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 1 | 0 | 1 | 16 | 1 | 17
+INPUTP | 3 | 82 | 67 | 76
+IMPORTS | 2 | 1 | 0 | 1 | 16
+EQ | 19 | 
+   dn1<2>.D = busy<0> & dn1<2>.LFBK
+	# !u_queue/ct<0>.LFBK & !u_queue/ct<1>.LFBK & 
+	dn1<2>.LFBK
+	# !busy<0> & u_queue/ct<0>.LFBK & 
+	u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK & qdbg<6>.PIN
+	# !busy<0> & u_queue/ct<0>.LFBK & 
+	!u_queue/hd<1>.LFBK & u_queue/hd<0>.LFBK & qdbg<14>.PIN
+	# !busy<0> & u_queue/ct<0>.LFBK & 
+	!u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK & qdbg<22>.PIN
+;Imported pterms FB2_1
+	# !busy<0> & u_queue/ct<1>.LFBK & 
+	!u_queue/hd<1>.LFBK & u_queue/hd<0>.LFBK & qdbg<14>.PIN
+;Imported pterms FB2_17
+	# !busy<0> & u_queue/ct<1>.LFBK & 
+	u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK & qdbg<6>.PIN
+	# !busy<0> & u_queue/ct<1>.LFBK & 
+	!u_queue/hd<1>.LFBK & !u_queue/hd<0>.LFBK & qdbg<22>.PIN;
+   dn1<2>.CLK = clk;	// GCK
+   !dn1<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 9 | dn1<3>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 3 | 0 | 14 | 4 | 10 | 4 | 9
+INPUTS | 14 | busy<0>  | qdbg_23_OBUF.LFBK  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_7_OBUF.LFBK  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_5_OBUF.LFBK  | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | in_num<1>  | qdbg_23_OBUF.EXP  | dn1<3>.LFBK
+INPUTMC | 12 | 0 | 11 | 4 | 8 | 1 | 12 | 1 | 6 | 4 | 13 | 1 | 8 | 1 | 9 | 4 | 10 | 2 | 15 | 2 | 12 | 4 | 8 | 4 | 9
+INPUTP | 2 | 87 | 93
+EXPORTS | 1 | 4 | 10
+IMPORTS | 1 | 4 | 8
+EQ | 19 | 
+   dn1<3>.D = busy<0> & dn1<3>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn1<3>.LFBK
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_7_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_23_OBUF.LFBK
+;Imported pterms FB5_9
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_7_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_23_OBUF.LFBK;
+   dn1<3>.CLK = clk;	// GCK
+   !dn1<3>.AR = rst_n;	// GSR
+    dn1<3>.EXP  =  in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<1> & !qdbg_5_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 15 | dn2<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 1 | 13 | 0 | 15
+INPUTS | 10 | dn2<0>.LFBK  | qdbg<20>.PIN  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<4>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | clk1_1_OBUF.EXP  | busy<0>.LFBK
+INPUTMC | 8 | 0 | 15 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 0 | 16 | 0 | 11
+INPUTP | 2 | 120 | 95
+IMPORTS | 1 | 0 | 16
+EQ | 18 | 
+   dn2<0>.D = busy<1> & dn2<0>.LFBK
+	# !busy<0>.LFBK & dn2<0>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn2<0>.LFBK
+	# u_queue/hd<1> & !u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<0> & busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<0> & busy<0>.LFBK & qdbg<20>.PIN
+;Imported pterms FB1_17
+	# u_queue/hd<1> & !u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<1> & busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<0> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<1> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & !busy<1> & 
+	u_queue/ct<1> & busy<0>.LFBK & qdbg<20>.PIN;
+   dn2<0>.CLK = clk;	// GCK
+   !dn2<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 12 | dn2<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 1 | 14 | 4 | 12
+INPUTS | 11 | busy<0>  | qdbg_21_OBUF.LFBK  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_5_OBUF.LFBK  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_6_OBUF.EXP  | qdbg_7_OBUF.EXP  | dn2<1>.LFBK
+INPUTMC | 11 | 0 | 11 | 4 | 5 | 1 | 7 | 1 | 12 | 1 | 6 | 4 | 10 | 1 | 8 | 1 | 9 | 4 | 11 | 4 | 13 | 4 | 12
+IMPORTS | 2 | 4 | 11 | 4 | 13
+EQ | 19 | 
+   dn2<1>.D = !busy<0> & dn2<1>.LFBK
+	# busy<1> & dn2<1>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn2<1>.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_5_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_21_OBUF.LFBK
+;Imported pterms FB5_12
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_5_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<13>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_21_OBUF.LFBK
+;Imported pterms FB5_14
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<13>.PIN;
+   dn2<1>.CLK = clk;	// GCK
+   !dn2<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 14 | dn2<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 1 | 15 | 5 | 14
+INPUTS | 11 | busy<0>  | qdbg<22>.PIN  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<6>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_9_OBUF.EXP  | EXP17_.EXP  | dn2<2>.LFBK
+INPUTMC | 9 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 5 | 13 | 5 | 15 | 5 | 14
+INPUTP | 2 | 76 | 82
+IMPORTS | 2 | 5 | 13 | 5 | 15
+EQ | 19 | 
+   dn2<2>.D = !busy<0> & dn2<2>.LFBK
+	# busy<1> & dn2<2>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn2<2>.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<6>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<22>.PIN
+;Imported pterms FB6_14
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<14>.PIN
+;Imported pterms FB6_16
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<6>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<14>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<22>.PIN;
+   dn2<2>.CLK = clk;	// GCK
+   !dn2<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 12 | dn2<3>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 1 | 16 | 5 | 12
+INPUTS | 10 | busy<0>  | qdbg<23>.PIN  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<7>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | EXP16_.EXP  | dn2<3>.LFBK
+INPUTMC | 8 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 5 | 11 | 5 | 12
+INPUTP | 2 | 78 | 83
+IMPORTS | 1 | 5 | 11
+EQ | 18 | 
+   dn2<3>.D = !busy<0> & dn2<3>.LFBK
+	# busy<1> & dn2<3>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn2<3>.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<7>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<23>.PIN
+;Imported pterms FB6_12
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<7>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<15>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<15>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<23>.PIN;
+   dn2<3>.CLK = clk;	// GCK
+   !dn2<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 0 | dn3<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 10 | 0 | 0
+INPUTS | 10 | busy<2>  | busy<0>.LFBK  | qdbg<20>.PIN  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | clk1_0_OBUF.EXP  | dn3<0>.LFBK
+INPUTMC | 9 | 2 | 9 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 0 | 1 | 0 | 0
+INPUTP | 1 | 120
+IMPORTS | 1 | 0 | 1
+EQ | 19 | 
+   dn3<0>.D = !busy<1> & dn3<0>.LFBK
+	# busy<2> & dn3<0>.LFBK
+	# !busy<0>.LFBK & dn3<0>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn3<0>.LFBK
+	# !u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<0> & busy<0>.LFBK & qdbg<20>.PIN
+;Imported pterms FB1_2
+	# u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<0> & busy<0>.LFBK & qdbg<4>.PIN
+	# u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<1> & busy<0>.LFBK & qdbg<4>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<0> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<1> & busy<0>.LFBK & qdbg<12>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & busy<1> & 
+	!busy<2> & u_queue/ct<1> & busy<0>.LFBK & qdbg<20>.PIN;
+   dn3<0>.CLK = clk;	// GCK
+   !dn3<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 0 | dn3<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 11 | 4 | 0
+INPUTS | 10 | busy<2>  | qdbg_21_OBUF.LFBK  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_14_OBUF.EXP  | dn3<1>.LFBK
+INPUTMC | 10 | 2 | 9 | 4 | 5 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 4 | 1 | 4 | 0
+IMPORTS | 1 | 4 | 1
+EQ | 19 | 
+   dn3<1>.D = !busy<0> & dn3<1>.LFBK
+	# !busy<1> & dn3<1>.LFBK
+	# busy<2> & dn3<1>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn3<1>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_21_OBUF.LFBK
+;Imported pterms FB5_2
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_5_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_5_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<13>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<13>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_21_OBUF.LFBK;
+   dn3<1>.CLK = clk;	// GCK
+   !dn3<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 17 | dn3<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 13 | 4 | 17
+INPUTS | 10 | busy<2>  | qdbg_22_OBUF.LFBK  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | EXP11_.EXP  | dn3<2>.LFBK
+INPUTMC | 10 | 2 | 9 | 4 | 7 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 4 | 16 | 4 | 17
+IMPORTS | 1 | 4 | 16
+EQ | 19 | 
+   dn3<2>.D = !busy<0> & dn3<2>.LFBK
+	# !busy<1> & dn3<2>.LFBK
+	# busy<2> & dn3<2>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn3<2>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_22_OBUF.LFBK
+;Imported pterms FB5_17
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_6_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_6_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_14_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_14_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_22_OBUF.LFBK;
+   dn3<2>.CLK = clk;	// GCK
+   !dn3<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 4 | 15 | dn3<3>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 14 | 4 | 15
+INPUTS | 10 | busy<2>  | qdbg_23_OBUF.LFBK  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | EXP10_.EXP  | dn3<3>.LFBK
+INPUTMC | 10 | 2 | 9 | 4 | 8 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 4 | 14 | 4 | 15
+IMPORTS | 1 | 4 | 14
+EQ | 19 | 
+   dn3<3>.D = !busy<0> & dn3<3>.LFBK
+	# !busy<1> & dn3<3>.LFBK
+	# busy<2> & dn3<3>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dn3<3>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_23_OBUF.LFBK
+;Imported pterms FB5_15
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_7_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_7_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_23_OBUF.LFBK;
+   dn3<3>.CLK = clk;	// GCK
+   !dn3<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 6 | dt1<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 3 | 0 | 2 | 5 | 7 | 5 | 6
+INPUTS | 13 | busy<0>  | qdbg_4_OBUF.LFBK  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | in_valid  | qdbg<16>.PIN  | u_queue/tl<0>  | u_queue/tl<1>  | in_num<0>  | EXP14_.EXP  | dt1<0>.LFBK
+INPUTMC | 10 | 0 | 11 | 5 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 2 | 15 | 2 | 12 | 5 | 5 | 5 | 6
+INPUTP | 3 | 87 | 8 | 127
+EXPORTS | 1 | 5 | 7
+IMPORTS | 1 | 5 | 5
+EQ | 21 | 
+   dt1<0>.D = busy<0> & dt1<0>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt1<0>.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<16>.PIN
+;Imported pterms FB6_6
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<0>.PIN
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<0>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<8>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<8>.PIN
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<16>.PIN;
+   dt1<0>.CLK = clk;	// GCK
+   !dt1<0>.AR = rst_n;	// GSR
+    dt1<0>.EXP  =  in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<0> & !qdbg_4_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<0> & !qdbg_4_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 4 | dt1<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 0 | 17 | 5 | 4
+INPUTS | 10 | busy<0>  | qdbg_17_OBUF.LFBK  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_9_OBUF.LFBK  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg<1>.PIN  | EXP13_.EXP  | dt1<1>.LFBK
+INPUTMC | 9 | 0 | 11 | 5 | 1 | 1 | 12 | 1 | 6 | 5 | 13 | 1 | 8 | 1 | 9 | 5 | 3 | 5 | 4
+INPUTP | 1 | 72
+IMPORTS | 1 | 5 | 3
+EQ | 17 | 
+   dt1<1>.D = busy<0> & dt1<1>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt1<1>.LFBK
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<1>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_17_OBUF.LFBK
+;Imported pterms FB6_4
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<1>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_17_OBUF.LFBK;
+   dt1<1>.CLK = clk;	// GCK
+   !dt1<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 9 | dt1<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 0 | 3 | 3 | 9
+INPUTS | 10 | busy<0>  | qdbg_18_OBUF.LFBK  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_2_OBUF.LFBK  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_10_OBUF.LFBK  | qdbg_20_OBUF.EXP  | dt1<2>.LFBK
+INPUTMC | 10 | 0 | 11 | 3 | 5 | 1 | 12 | 1 | 6 | 3 | 10 | 1 | 8 | 1 | 9 | 3 | 1 | 3 | 8 | 3 | 9
+IMPORTS | 1 | 3 | 8
+EQ | 17 | 
+   dt1<2>.D = busy<0> & dt1<2>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt1<2>.LFBK
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg_18_OBUF.LFBK
+;Imported pterms FB4_9
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_18_OBUF.LFBK;
+   dt1<2>.CLK = clk;	// GCK
+   !dt1<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 12 | dt1<3>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 3 | 0 | 13 | 0 | 4 | 0 | 12
+INPUTS | 10 | dt1<3>.LFBK  | qdbg<19>.PIN  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<20>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg<3>.PIN  | busy<0>.EXP  | busy<0>.LFBK
+INPUTMC | 7 | 0 | 12 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 0 | 11 | 0 | 11
+INPUTP | 3 | 118 | 120 | 122
+EXPORTS | 1 | 0 | 13
+IMPORTS | 1 | 0 | 11
+EQ | 19 | 
+   dt1<3>.D = busy<0>.LFBK & dt1<3>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt1<3>.LFBK
+	# u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<3>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<19>.PIN
+;Imported pterms FB1_12
+	# u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<3>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<0> & 
+	!busy<0>.LFBK & qdbg<11>.PIN
+	# !u_queue/hd<1> & u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<11>.PIN
+	# !u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<19>.PIN;
+   dt1<3>.CLK = clk;	// GCK
+   !dt1<3>.AR = rst_n;	// GSR
+    dt1<3>.EXP  =  !u_queue/hd<1> & !u_queue/hd<0> & u_queue/ct<1> & 
+	!busy<0>.LFBK & qdbg<20>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 8 | dt2<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 1 | 2 | 5 | 8
+INPUTS | 11 | busy<0>  | qdbg<0>.PIN  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg<16>.PIN  | qdbg_4_OBUF.EXP  | dt2<1>.EXP  | dt2<0>.LFBK
+INPUTMC | 9 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 5 | 7 | 5 | 9 | 5 | 8
+INPUTP | 2 | 47 | 8
+IMPORTS | 2 | 5 | 7 | 5 | 9
+EQ | 19 | 
+   dt2<0>.D = !busy<0> & dt2<0>.LFBK
+	# busy<1> & dt2<0>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt2<0>.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<0>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<16>.PIN
+;Imported pterms FB6_8
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<0>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<8>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<16>.PIN
+;Imported pterms FB6_10
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<8>.PIN;
+   dt2<0>.CLK = clk;	// GCK
+   !dt2<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 9 | dt2<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 3 | 1 | 1 | 5 | 8 | 5 | 9
+INPUTS | 10 | busy<0>  | qdbg_17_OBUF.LFBK  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<8>.PIN  | u_queue/hd<1>  | u_queue/hd<0>  | EXP15_.EXP  | dt2<1>.LFBK
+INPUTMC | 9 | 0 | 11 | 5 | 1 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 5 | 10 | 5 | 9
+INPUTP | 1 | 124
+EXPORTS | 1 | 5 | 8
+IMPORTS | 1 | 5 | 10
+EQ | 20 | 
+   dt2<1>.D = !busy<0> & dt2<1>.LFBK
+	# busy<1> & dt2<1>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt2<1>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_17_OBUF.LFBK
+;Imported pterms FB6_11
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<1>.PIN
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<1>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_17_OBUF.LFBK;
+   dt2<1>.CLK = clk;	// GCK
+   !dt2<1>.AR = rst_n;	// GSR
+    dt2<1>.EXP  =  !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<8>.PIN
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 14 | dt2<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 3 | 1 | 5 | 3 | 13 | 3 | 14
+INPUTS | 14 | busy<0>  | qdbg_18_OBUF.LFBK  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_8_OBUF.LFBK  | u_queue/hd<1>  | u_queue/hd<0>  | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | in_time<0>  | EXP6_.EXP  | dt2<2>.LFBK
+INPUTMC | 12 | 0 | 11 | 3 | 5 | 1 | 7 | 1 | 12 | 1 | 6 | 3 | 13 | 1 | 8 | 1 | 9 | 2 | 15 | 2 | 12 | 3 | 15 | 3 | 14
+INPUTP | 2 | 87 | 41
+EXPORTS | 1 | 3 | 13
+IMPORTS | 1 | 3 | 15
+EQ | 20 | 
+   dt2<2>.D = !busy<0> & dt2<2>.LFBK
+	# busy<1> & dt2<2>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt2<2>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_18_OBUF.LFBK
+;Imported pterms FB4_16
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_2_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_18_OBUF.LFBK;
+   dt2<2>.CLK = clk;	// GCK
+   !dt2<2>.AR = rst_n;	// GSR
+    dt2<2>.EXP  =  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<0> & !qdbg_8_OBUF.LFBK
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 12 | dt2<3>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 1 | 11 | 3 | 12
+INPUTS | 11 | busy<0>  | qdbg_19_OBUF.LFBK  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_3_OBUF.LFBK  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_3_OBUF.EXP  | qdbg_8_OBUF.EXP  | dt2<3>.LFBK
+INPUTMC | 11 | 0 | 11 | 3 | 7 | 1 | 7 | 1 | 12 | 1 | 6 | 3 | 11 | 1 | 8 | 1 | 9 | 3 | 11 | 3 | 13 | 3 | 12
+IMPORTS | 2 | 3 | 11 | 3 | 13
+EQ | 19 | 
+   dt2<3>.D = !busy<0> & dt2<3>.LFBK
+	# busy<1> & dt2<3>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt2<3>.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_3_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_19_OBUF.LFBK
+;Imported pterms FB4_12
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_11_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_19_OBUF.LFBK
+;Imported pterms FB4_14
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_3_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_11_OBUF.LFBK;
+   dt2<3>.CLK = clk;	// GCK
+   !dt2<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 0 | dt3<0>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 2 | 5 | 0
+INPUTS | 10 | busy<2>  | qdbg<16>.PIN  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_17_OBUF.EXP  | dt3<0>.LFBK
+INPUTMC | 9 | 2 | 9 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 5 | 1 | 5 | 0
+INPUTP | 1 | 8
+IMPORTS | 1 | 5 | 1
+EQ | 19 | 
+   dt3<0>.D = !busy<0> & dt3<0>.LFBK
+	# !busy<1> & dt3<0>.LFBK
+	# busy<2> & dt3<0>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt3<0>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<16>.PIN
+;Imported pterms FB6_2
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<0>.PIN
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<0>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<8>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<8>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<16>.PIN;
+   dt3<0>.CLK = clk;	// GCK
+   !dt3<0>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 5 | 17 | dt3<1>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 16 | 5 | 17
+INPUTS | 10 | busy<2>  | qdbg_17_OBUF.LFBK  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | EXP18_.EXP  | dt3<1>.LFBK
+INPUTMC | 10 | 2 | 9 | 5 | 1 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 5 | 16 | 5 | 17
+IMPORTS | 1 | 5 | 16
+EQ | 19 | 
+   dt3<1>.D = !busy<0> & dt3<1>.LFBK
+	# !busy<1> & dt3<1>.LFBK
+	# busy<2> & dt3<1>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt3<1>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_17_OBUF.LFBK
+;Imported pterms FB6_17
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<1>.PIN
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<1>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_17_OBUF.LFBK;
+   dt3<1>.CLK = clk;	// GCK
+   !dt3<1>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 0 | dt3<2>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 4 | 3 | 0
+INPUTS | 10 | busy<2>  | qdbg_18_OBUF.LFBK  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | qdbg_10_OBUF.EXP  | dt3<2>.LFBK
+INPUTMC | 10 | 2 | 9 | 3 | 5 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 3 | 1 | 3 | 0
+IMPORTS | 1 | 3 | 1
+EQ | 19 | 
+   dt3<2>.D = !busy<0> & dt3<2>.LFBK
+	# !busy<1> & dt3<2>.LFBK
+	# busy<2> & dt3<2>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt3<2>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_18_OBUF.LFBK
+;Imported pterms FB4_2
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_2_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_18_OBUF.LFBK;
+   dt3<2>.CLK = clk;	// GCK
+   !dt3<2>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 3 | 17 | dt3<3>
+ATTRIBUTES | 8626944 | 0
+OUTPUTMC | 2 | 2 | 8 | 3 | 17
+INPUTS | 10 | busy<2>  | qdbg_19_OBUF.LFBK  | busy<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | u_queue/hd<1>  | u_queue/hd<0>  | EXP7_.EXP  | dt3<3>.LFBK
+INPUTMC | 10 | 2 | 9 | 3 | 7 | 0 | 11 | 1 | 7 | 1 | 12 | 1 | 6 | 1 | 8 | 1 | 9 | 3 | 16 | 3 | 17
+IMPORTS | 1 | 3 | 16
+EQ | 19 | 
+   dt3<3>.D = !busy<0> & dt3<3>.LFBK
+	# !busy<1> & dt3<3>.LFBK
+	# busy<2> & dt3<3>.LFBK
+	# !u_queue/ct<0> & !u_queue/ct<1> & dt3<3>.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_19_OBUF.LFBK
+;Imported pterms FB4_17
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_3_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_3_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_11_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_11_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_19_OBUF.LFBK;
+   dt3<3>.CLK = clk;	// GCK
+   !dt3<3>.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 2 | 6 | fifo_re
+ATTRIBUTES | 8561408 | 0
+OUTPUTMC | 4 | 1 | 8 | 1 | 9 | 1 | 12 | 1 | 6
+INPUTS | 5 | u_queue/ct<0>  | u_queue/ct<1>  | busy<0>  | busy<1>  | busy<2>.LFBK
+INPUTMC | 5 | 1 | 12 | 1 | 6 | 0 | 11 | 1 | 7 | 2 | 9
+EQ | 4 | 
+   !fifo_re.D = !u_queue/ct<0> & !u_queue/ct<1>
+	# busy<0> & busy<1> & busy<2>.LFBK;
+   fifo_re.CLK = clk;	// GCK
+   !fifo_re.AR = rst_n;	// GSR
+GLOBALS | 2 | 2 | clk | 4 | rst_n
+
+MACROCELL | 0 | 3 | EXP0_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 2
+INPUTS | 6 | ld1.LFBK  | clk1_0_OBUF.LFBK  | dt1<2>  | clk1_1_OBUF.LFBK  | busy<0>.LFBK  | clk1_2_OBUF.LFBK
+INPUTMC | 6 | 0 | 9 | 0 | 1 | 3 | 9 | 0 | 16 | 0 | 11 | 0 | 2
+EXPORTS | 1 | 0 | 2
+EQ | 4 | 
+       EXP0_.EXP  =  dt1<2> & ld1.LFBK & !clk1_2_OBUF.LFBK
+	# !dt1<2> & ld1.LFBK & clk1_2_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_2_OBUF.LFBK
+
+MACROCELL | 0 | 17 | EXP1_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 0 | 16
+INPUTS | 7 | clk1_1_OBUF.LFBK  | dt1<1>  | busy<0>.LFBK  | clk1_0_OBUF.LFBK  | clk1_2_OBUF.LFBK  | clk1_3_OBUF.LFBK  | ld1.LFBK
+INPUTMC | 7 | 0 | 16 | 5 | 4 | 0 | 11 | 0 | 1 | 0 | 2 | 0 | 4 | 0 | 9
+EXPORTS | 1 | 0 | 16
+EQ | 6 | 
+       EXP1_.EXP  =  dt1<1> & ld1.LFBK
+	# !busy<0>.LFBK & clk1_1_OBUF.LFBK & !ld1.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_3_OBUF.LFBK
+	# busy<0>.LFBK & !clk1_0_OBUF.LFBK & 
+	!clk1_1_OBUF.LFBK & !ld1.LFBK & clk1_2_OBUF.LFBK
+
+MACROCELL | 1 | 0 | EXP2_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 1 | 17
+INPUTS | 5 | u_queue/hd<0>.LFBK  | busy<0>  | u_queue/ct<1>.LFBK  | qdbg<14>.PIN  | u_queue/hd<1>.LFBK
+INPUTMC | 4 | 1 | 9 | 0 | 11 | 1 | 6 | 1 | 8
+INPUTP | 1 | 67
+EXPORTS | 1 | 1 | 17
+EQ | 2 | 
+       EXP2_.EXP  =  !busy<0> & u_queue/ct<1>.LFBK & 
+	!u_queue/hd<1>.LFBK & u_queue/hd<0>.LFBK & qdbg<14>.PIN
+
+MACROCELL | 2 | 0 | EXP3_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 17
+INPUTS | 7 | qdbg<21>.PIN  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | u_queue/ct<1>  | qdbg<5>.PIN  | qdbg_13_OBUF.LFBK
+INPUTMC | 5 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 6 | 2 | 7
+INPUTP | 2 | 74 | 80
+EXPORTS | 1 | 2 | 17
+EQ | 6 | 
+       EXP3_.EXP  =  u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<5>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_13_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<21>.PIN
+
+MACROCELL | 3 | 3 | EXP4_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 2
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<1>  | in_time<3>  | u_queue/ct<0>  | qdbg_11_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 6 | 1 | 12 | 3 | 2
+INPUTP | 2 | 87 | 107
+EXPORTS | 1 | 3 | 2
+EQ | 6 | 
+       EXP4_.EXP  =  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<3> & !qdbg_11_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<3> & !qdbg_11_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<3> & qdbg_11_OBUF.LFBK
+
+MACROCELL | 3 | 6 | EXP5_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 7
+INPUTS | 6 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<1>  | in_time<3>  | qdbg_19_OBUF.LFBK
+INPUTMC | 4 | 2 | 15 | 2 | 12 | 1 | 6 | 3 | 7
+INPUTP | 2 | 87 | 107
+EXPORTS | 1 | 3 | 7
+EQ | 2 | 
+       EXP5_.EXP  =  in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<3> & !qdbg_19_OBUF.LFBK
+
+MACROCELL | 3 | 15 | EXP6_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 14
+INPUTS | 9 | qdbg_18_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_2_OBUF.LFBK  | qdbg_10_OBUF.LFBK
+INPUTMC | 9 | 3 | 5 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 1 | 12 | 1 | 6 | 3 | 10 | 3 | 1
+EXPORTS | 1 | 3 | 14
+EQ | 10 | 
+       EXP6_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_2_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_2_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_10_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_18_OBUF.LFBK
+
+MACROCELL | 3 | 16 | EXP7_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 3 | 17
+INPUTS | 10 | qdbg_19_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_3_OBUF.LFBK  | qdbg_11_OBUF.LFBK
+INPUTMC | 10 | 3 | 7 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 3 | 11 | 3 | 2
+EXPORTS | 1 | 3 | 17
+EQ | 10 | 
+       EXP7_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_3_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_3_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_11_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_11_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_19_OBUF.LFBK
+
+MACROCELL | 4 | 3 | EXP8_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 2
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<1>  | in_num<3>  | u_queue/ct<0>  | qdbg_15_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 6 | 1 | 12 | 4 | 2
+INPUTP | 2 | 87 | 56
+EXPORTS | 1 | 4 | 2
+EQ | 6 | 
+       EXP8_.EXP  =  in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<3> & !qdbg_15_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<3> & !qdbg_15_OBUF.LFBK
+	# in_valid & u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_num<3> & qdbg_15_OBUF.LFBK
+
+MACROCELL | 4 | 6 | EXP9_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 7
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_num<2>  | u_queue/ct<1>  | qdbg_22_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 4 | 7
+INPUTP | 2 | 87 | 91
+EXPORTS | 1 | 4 | 7
+EQ | 4 | 
+       EXP9_.EXP  =  in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_num<2> & !qdbg_22_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_num<2> & !qdbg_22_OBUF.LFBK
+
+MACROCELL | 4 | 14 | EXP10_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 15
+INPUTS | 10 | qdbg_23_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_7_OBUF.LFBK  | qdbg_15_OBUF.LFBK
+INPUTMC | 10 | 4 | 8 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 4 | 13 | 4 | 2
+EXPORTS | 1 | 4 | 15
+EQ | 10 | 
+       EXP10_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_7_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_7_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_15_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_23_OBUF.LFBK
+
+MACROCELL | 4 | 16 | EXP11_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 4 | 17
+INPUTS | 10 | qdbg_22_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg_6_OBUF.LFBK  | qdbg_14_OBUF.LFBK
+INPUTMC | 10 | 4 | 7 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 12 | 1 | 6 | 4 | 11 | 4 | 1
+EXPORTS | 1 | 4 | 17
+EQ | 10 | 
+       EXP11_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_6_OBUF.LFBK
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_6_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_14_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_14_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_22_OBUF.LFBK
+
+MACROCELL | 5 | 2 | EXP12_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 1
+INPUTS | 7 | in_valid  | u_queue/tl<0>  | u_queue/tl<1>  | u_queue/ct<0>  | in_time<1>  | u_queue/ct<1>  | qdbg_17_OBUF.LFBK
+INPUTMC | 5 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 5 | 1
+INPUTP | 2 | 87 | 101
+EXPORTS | 1 | 5 | 1
+EQ | 8 | 
+       EXP12_.EXP  =  in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & in_time<1> & !qdbg_17_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<0> & !in_time<1> & qdbg_17_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & in_time<1> & !qdbg_17_OBUF.LFBK
+	# in_valid & !u_queue/tl<0> & !u_queue/tl<1> & 
+	!u_queue/ct<1> & !in_time<1> & qdbg_17_OBUF.LFBK
+
+MACROCELL | 5 | 3 | EXP13_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 4
+INPUTS | 7 | qdbg_9_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | u_queue/ct<1>  | qdbg<1>.PIN  | qdbg_17_OBUF.LFBK
+INPUTMC | 6 | 5 | 13 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 6 | 5 | 1
+INPUTP | 1 | 72
+EXPORTS | 1 | 5 | 4
+EQ | 6 | 
+       EXP13_.EXP  =  u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<1>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg_17_OBUF.LFBK
+
+MACROCELL | 5 | 5 | EXP14_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 6
+INPUTS | 8 | qdbg<16>.PIN  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<8>.PIN  | qdbg<0>.PIN
+INPUTMC | 5 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 12 | 1 | 6
+INPUTP | 3 | 8 | 124 | 47
+EXPORTS | 1 | 5 | 6
+EQ | 10 | 
+       EXP14_.EXP  =  u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<0>.PIN
+	# u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<0>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<0> & qdbg<8>.PIN
+	# !u_queue/hd<1> & !busy<0> & u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<8>.PIN
+	# !u_queue/hd<1> & !busy<0> & !u_queue/hd<0> & 
+	u_queue/ct<1> & qdbg<16>.PIN
+
+MACROCELL | 5 | 10 | EXP15_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 9
+INPUTS | 9 | qdbg_9_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | u_queue/ct<1>  | u_queue/ct<0>  | qdbg<1>.PIN  | qdbg_17_OBUF.LFBK
+INPUTMC | 8 | 5 | 13 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 1 | 6 | 1 | 12 | 5 | 1
+INPUTP | 1 | 72
+EXPORTS | 1 | 5 | 9
+EQ | 10 | 
+       EXP15_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<1>.PIN
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<1>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg_17_OBUF.LFBK
+
+MACROCELL | 5 | 11 | EXP16_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 12
+INPUTS | 9 | qdbg<23>.PIN  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | u_queue/ct<0>  | u_queue/ct<1>  | qdbg<7>.PIN  | qdbg<15>.PIN
+INPUTMC | 6 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 1 | 12 | 1 | 6
+INPUTP | 3 | 78 | 83 | 70
+EXPORTS | 1 | 5 | 12
+EQ | 8 | 
+       EXP16_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<7>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<0> & qdbg<15>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<15>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<23>.PIN
+
+MACROCELL | 5 | 15 | EXP17_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 14
+INPUTS | 8 | qdbg<22>.PIN  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | u_queue/ct<1>  | qdbg<6>.PIN  | qdbg<14>.PIN
+INPUTMC | 5 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 1 | 6
+INPUTP | 3 | 76 | 82 | 67
+EXPORTS | 1 | 5 | 14
+EQ | 6 | 
+       EXP17_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<6>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<14>.PIN
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	!busy<1> & u_queue/ct<1> & qdbg<22>.PIN
+
+MACROCELL | 5 | 16 | EXP18_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 5 | 17
+INPUTS | 10 | qdbg_9_OBUF.LFBK  | u_queue/hd<1>  | busy<0>  | u_queue/hd<0>  | busy<1>  | busy<2>  | u_queue/ct<1>  | u_queue/ct<0>  | qdbg<1>.PIN  | qdbg_17_OBUF.LFBK
+INPUTMC | 9 | 5 | 13 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 2 | 9 | 1 | 6 | 1 | 12 | 5 | 1
+INPUTP | 1 | 72
+EXPORTS | 1 | 5 | 17
+EQ | 10 | 
+       EXP18_.EXP  =  u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg<1>.PIN
+	# u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg<1>.PIN
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<0> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_9_OBUF.LFBK
+	# !u_queue/hd<1> & busy<0> & !u_queue/hd<0> & 
+	busy<1> & !busy<2> & u_queue/ct<1> & qdbg_17_OBUF.LFBK
+
+PIN | in_valid | 64 | 0 | N/A | 87 | 33 | 2 | 5 | 1 | 6 | 3 | 2 | 3 | 4 | 2 | 7 | 3 | 14 | 4 | 2 | 1 | 10 | 4 | 9 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 8 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 2 | 15 | 2 | 12 | 1 | 12 | 3 | 3 | 3 | 6 | 4 | 3 | 4 | 6 | 5 | 2 | 5 | 6
+PIN | clk | 4096 | 0 | N/A | 29 | 85 | 0 | 1 | 0 | 16 | 0 | 2 | 1 | 2 | 1 | 1 | 1 | 5 | 2 | 2 | 2 | 16 | 2 | 4 | 0 | 4 | 1 | 11 | 2 | 8 | 2 | 5 | 3 | 1 | 3 | 2 | 3 | 4 | 2 | 7 | 4 | 1 | 4 | 2 | 1 | 10 | 5 | 1 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 8 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 0 | 9 | 2 | 3 | 2 | 1 | 2 | 9 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 0 | 13 | 2 | 17 | 1 | 17 | 4 | 9 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 0 | 12 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 2 | 6
+PIN | rst_n | 65536 | 0 | N/A | 134 | 85 | 0 | 1 | 0 | 16 | 0 | 2 | 1 | 2 | 1 | 1 | 1 | 5 | 2 | 2 | 2 | 16 | 2 | 4 | 0 | 4 | 1 | 11 | 2 | 8 | 2 | 5 | 3 | 1 | 3 | 2 | 3 | 4 | 2 | 7 | 4 | 1 | 4 | 2 | 1 | 10 | 5 | 1 | 3 | 5 | 3 | 7 | 4 | 4 | 3 | 8 | 4 | 5 | 4 | 7 | 4 | 8 | 3 | 10 | 3 | 11 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 13 | 3 | 13 | 5 | 13 | 0 | 7 | 0 | 8 | 0 | 10 | 0 | 14 | 1 | 13 | 1 | 14 | 1 | 15 | 1 | 16 | 2 | 10 | 2 | 11 | 2 | 13 | 2 | 14 | 1 | 8 | 0 | 11 | 1 | 9 | 1 | 7 | 0 | 9 | 2 | 3 | 2 | 1 | 2 | 9 | 2 | 15 | 2 | 12 | 1 | 12 | 1 | 6 | 0 | 13 | 2 | 17 | 1 | 17 | 4 | 9 | 0 | 15 | 4 | 12 | 5 | 14 | 5 | 12 | 0 | 0 | 4 | 0 | 4 | 17 | 4 | 15 | 5 | 6 | 5 | 4 | 3 | 9 | 0 | 12 | 5 | 8 | 5 | 9 | 3 | 14 | 3 | 12 | 5 | 0 | 5 | 17 | 3 | 0 | 3 | 17 | 2 | 6
+PIN | in_time<0> | 64 | 0 | N/A | 41 | 4 | 2 | 5 | 1 | 10 | 3 | 13 | 3 | 14
+PIN | in_time<2> | 64 | 0 | N/A | 126 | 3 | 3 | 10 | 3 | 5 | 3 | 2
+PIN | in_time<3> | 64 | 0 | N/A | 107 | 6 | 3 | 2 | 3 | 7 | 3 | 11 | 3 | 3 | 3 | 6 | 3 | 10
+PIN | in_num<0> | 64 | 0 | N/A | 127 | 5 | 3 | 4 | 3 | 8 | 5 | 7 | 3 | 7 | 5 | 6
+PIN | in_num<1> | 64 | 0 | N/A | 93 | 4 | 2 | 7 | 4 | 5 | 4 | 10 | 4 | 9
+PIN | in_num<2> | 64 | 0 | N/A | 91 | 5 | 4 | 11 | 4 | 7 | 4 | 2 | 4 | 6 | 4 | 10
+PIN | in_num<3> | 64 | 0 | N/A | 56 | 5 | 4 | 2 | 4 | 8 | 4 | 13 | 4 | 3 | 4 | 7
+PIN | in_time<1> | 64 | 0 | N/A | 101 | 3 | 5 | 13 | 4 | 4 | 5 | 2
+PIN | clk1<0> | 536871040 | 0 | N/A | 18
+PIN | clk1<1> | 536871040 | 0 | N/A | 38
+PIN | clk1<2> | 536871040 | 0 | N/A | 19
+PIN | clk2<0> | 536871040 | 0 | N/A | 131
+PIN | clk2<1> | 536871040 | 0 | N/A | 129
+PIN | clk2<2> | 536871040 | 0 | N/A | 2
+PIN | clk3<0> | 536871040 | 0 | N/A | 42
+PIN | clk3<1> | 536871040 | 0 | N/A | 65
+PIN | clk3<2> | 536871040 | 0 | N/A | 46
+PIN | clk1<3> | 536871040 | 0 | N/A | 20
+PIN | clk2<3> | 536871040 | 0 | N/A | 10
+PIN | clk3<3> | 536871040 | 0 | N/A | 50
+PIN | qdbg<10> | 536871040 | 0 | N/A | 112
+PIN | qdbg<17> | 536871040 | 0 | N/A | 88
+PIN | qdbg<18> | 536871040 | 0 | N/A | 117
+PIN | qdbg<2> | 536871040 | 0 | N/A | 121
+PIN | qdbg<9> | 536871040 | 0 | N/A | 104
+PIN | num1<0> | 536871040 | 0 | N/A | 23
+PIN | num1<1> | 536871040 | 0 | N/A | 25
+PIN | num1<2> | 536871040 | 0 | N/A | 27
+PIN | num1<3> | 536871040 | 0 | N/A | 33
+PIN | num2<0> | 536871040 | 0 | N/A | 12
+PIN | num2<1> | 536871040 | 0 | N/A | 14
+PIN | num2<2> | 536871040 | 0 | N/A | 15
+PIN | num2<3> | 536871040 | 0 | N/A | 16
+PIN | num3<0> | 536871040 | 0 | N/A | 51
+PIN | num3<1> | 536871040 | 0 | N/A | 53
+PIN | num3<2> | 536871040 | 0 | N/A | 54
+PIN | num3<3> | 536871040 | 0 | N/A | 55
+PIN | qdbg<0> | 536870976 | 0 | N/A | 47 | 4 | 5 | 7 | 5 | 1 | 5 | 8 | 5 | 5
+PIN | qdbg<11> | 536870976 | 0 | N/A | 113 | 1 | 0 | 11
+PIN | qdbg<12> | 536870976 | 0 | N/A | 116 | 4 | 0 | 16 | 0 | 1 | 0 | 14 | 0 | 13
+PIN | qdbg<13> | 536870976 | 0 | N/A | 49 | 3 | 4 | 13 | 4 | 11 | 4 | 1
+PIN | qdbg<14> | 536870976 | 0 | N/A | 67 | 4 | 1 | 0 | 5 | 15 | 5 | 13 | 1 | 17
+PIN | qdbg<15> | 536870976 | 0 | N/A | 70 | 1 | 5 | 11
+PIN | qdbg<16> | 536870976 | 0 | N/A | 8 | 6 | 5 | 7 | 5 | 5 | 5 | 1 | 5 | 0 | 5 | 8 | 5 | 6
+PIN | qdbg<19> | 536870976 | 0 | N/A | 118 | 2 | 0 | 11 | 0 | 12
+PIN | qdbg<1> | 536870976 | 0 | N/A | 72 | 4 | 5 | 10 | 5 | 16 | 5 | 3 | 5 | 4
+PIN | qdbg<20> | 536870976 | 0 | N/A | 120 | 6 | 0 | 16 | 0 | 12 | 0 | 1 | 0 | 0 | 0 | 15 | 0 | 13
+PIN | qdbg<21> | 536870976 | 0 | N/A | 74 | 2 | 2 | 0 | 2 | 17
+PIN | qdbg<22> | 536870976 | 0 | N/A | 76 | 4 | 5 | 15 | 1 | 16 | 5 | 14 | 1 | 17
+PIN | qdbg<23> | 536870976 | 0 | N/A | 78 | 2 | 5 | 12 | 5 | 11
+PIN | qdbg<3> | 536870976 | 0 | N/A | 122 | 2 | 0 | 11 | 0 | 12
+PIN | qdbg<4> | 536870976 | 0 | N/A | 95 | 5 | 0 | 16 | 0 | 14 | 0 | 1 | 0 | 15 | 0 | 13
+PIN | qdbg<5> | 536870976 | 0 | N/A | 80 | 2 | 2 | 0 | 2 | 17
+PIN | qdbg<6> | 536870976 | 0 | N/A | 82 | 4 | 5 | 15 | 1 | 16 | 5 | 14 | 1 | 17
+PIN | qdbg<7> | 536870976 | 0 | N/A | 83 | 2 | 5 | 11 | 5 | 12
+PIN | qdbg<8> | 536870976 | 0 | N/A | 124 | 4 | 5 | 9 | 5 | 1 | 5 | 7 | 5 | 5

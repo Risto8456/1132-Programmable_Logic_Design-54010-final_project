@@ -1,0 +1,98 @@
+Pin Freeze File:  version P.20131013
+
+9510884 XC95108-7-PC84
+clk S:PIN9
+in_num<0> S:PIN70
+in_num<1> S:PIN48
+in_num<2> S:PIN47
+in_num<3> S:PIN26
+in_time<0> S:PIN14
+in_time<1> S:PIN53
+in_time<2> S:PIN69
+in_time<3> S:PIN56
+in_valid S:PIN44
+rst_n S:PIN74
+clk1<0> S:PIN1
+clk1<1> S:PIN13
+clk1<2> S:PIN2
+clk1<3> S:PIN3
+clk2<0> S:PIN72
+clk2<1> S:PIN71
+clk2<2> S:PIN75
+clk2<3> S:PIN80
+clk3<0> S:PIN15
+clk3<1> S:PIN31
+clk3<2> S:PIN17
+clk3<3> S:PIN20
+num1<0> S:PIN5
+num1<1> S:PIN6
+num1<2> S:PIN7
+num1<3> S:PIN11
+num2<0> S:PIN81
+num2<1> S:PIN82
+num2<2> S:PIN83
+num2<3> S:PIN84
+num3<0> S:PIN21
+num3<1> S:PIN23
+num3<2> S:PIN24
+num3<3> S:PIN25
+qdbg<0> S:PIN18
+qdbg<10> S:PIN57
+qdbg<11> S:PIN58
+qdbg<12> S:PIN61
+qdbg<13> S:PIN19
+qdbg<14> S:PIN32
+qdbg<15> S:PIN33
+qdbg<16> S:PIN79
+qdbg<17> S:PIN45
+qdbg<18> S:PIN62
+qdbg<19> S:PIN63
+qdbg<1> S:PIN34
+qdbg<20> S:PIN65
+qdbg<21> S:PIN35
+qdbg<22> S:PIN36
+qdbg<23> S:PIN37
+qdbg<2> S:PIN66
+qdbg<3> S:PIN67
+qdbg<4> S:PIN50
+qdbg<5> S:PIN39
+qdbg<6> S:PIN40
+qdbg<7> S:PIN41
+qdbg<8> S:PIN68
+qdbg<9> S:PIN54
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 dn3<0> clk1_0_OBUF clk1_2_OBUF EXP0_
+		 clk1_3_OBUF
+PARTITION FB1_8 num1_0_OBUF num1_1_OBUF ld1 num1_2_OBUF
+		 busy<0> dt1<3> dn1<0> num1_3_OBUF
+		 dn2<0> clk1_1_OBUF EXP1_
+PARTITION FB2_1 EXP2_ clk2_1_OBUF clk2_0_OBUF
+PARTITION FB2_6 clk2_2_OBUF u_queue/ct<1> busy<1> u_queue/hd<1>
+		 u_queue/hd<0> qdbg_16_OBUF clk2_3_OBUF u_queue/ct<0>
+		 num2_0_OBUF num2_1_OBUF num2_2_OBUF num2_3_OBUF
+		 dn1<2>
+PARTITION FB3_1 EXP3_ ld3 clk3_0_OBUF ld2
+		 clk3_2_OBUF qdbg_0_OBUF fifo_re qdbg_13_OBUF
+		 clk3_3_OBUF busy<2> num3_0_OBUF num3_1_OBUF
+		 u_queue/tl<1> num3_2_OBUF num3_3_OBUF u_queue/tl<0>
+		 clk3_1_OBUF dn1<1>
+PARTITION FB4_1 dt3<2> qdbg_10_OBUF qdbg_11_OBUF EXP4_
+		 qdbg_12_OBUF qdbg_18_OBUF EXP5_ qdbg_19_OBUF
+		 qdbg_20_OBUF dt1<2> qdbg_2_OBUF qdbg_3_OBUF
+		 dt2<3> qdbg_8_OBUF dt2<2> EXP6_
+		 EXP7_ dt3<3>
+PARTITION FB5_1 dn3<1> qdbg_14_OBUF qdbg_15_OBUF EXP8_
+		 qdbg_1_OBUF qdbg_21_OBUF EXP9_ qdbg_22_OBUF
+		 qdbg_23_OBUF dn1<3> qdbg_5_OBUF qdbg_6_OBUF
+		 dn2<1> qdbg_7_OBUF EXP10_ dn3<3>
+		 EXP11_ dn3<2>
+PARTITION FB6_1 dt3<0> qdbg_17_OBUF EXP12_ EXP13_
+		 dt1<1> EXP14_ dt1<0> qdbg_4_OBUF
+		 dt2<0> dt2<1> EXP15_ EXP16_
+		 dn2<3> qdbg_9_OBUF dn2<2> EXP17_
+		 EXP18_ dt3<1>
+
