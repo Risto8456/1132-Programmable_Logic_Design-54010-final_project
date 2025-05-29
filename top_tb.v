@@ -16,6 +16,22 @@ module top_tb;
 	wire [3:0] num3;
 	wire [3:0] clk3;
 	wire [23:0] qdbg;
+	wire fifo_re;
+	wire ld1;
+	wire ld2;
+	wire ld3;
+	wire [2:0] busy;
+	wire fifo_full;
+	wire fifo_emp;
+	wire [3:0] fifo_num;
+	wire [3:0] fifo_tim;
+	wire [3:0] dn1;
+	wire [3:0] dt1;
+	wire [3:0] dn2;
+	wire [3:0] dt2;
+	wire [3:0] dn3;
+	wire [3:0] dt3;
+
 	
 	// Instantiate the Unit Under Test (UUT)
 	top uut (
@@ -30,7 +46,22 @@ module top_tb;
 		.clk2(clk2), 
 		.num3(num3), 
 		.clk3(clk3), 
-		.qdbg(qdbg)
+		.qdbg(qdbg), 
+		.fifo_re(fifo_re), 
+		.ld1(ld1), 
+		.ld2(ld2), 
+		.ld3(ld3), 
+		.busy(busy), 
+		.fifo_full(fifo_full), 
+		.fifo_emp(fifo_emp), 
+		.fifo_num(fifo_num), 
+		.fifo_tim(fifo_tim), 
+		.dn1(dn1), 
+		.dt1(dt1), 
+		.dn2(dn2), 
+		.dt2(dt2), 
+		.dn3(dn3), 
+		.dt3(dt3)
 	);
 
 //==== Clock : 20 ns 週期 ======================================

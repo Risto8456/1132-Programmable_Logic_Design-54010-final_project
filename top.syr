@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.31 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.32 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Reading design: top.prj
 
@@ -174,7 +174,6 @@ Unit <counter> synthesized.
 
 Synthesizing Unit <top>.
     Related source file is "top.v".
-WARNING:Xst:646 - Signal <fifo_full> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <top> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -254,7 +253,7 @@ XOR Preserve                       : YES
 wysiwyg                            : NO
 
 Design Statistics
-# IOs                              : 59
+# IOs                              : 100
 
 Cell Usage :
 # BELS                             : 618
@@ -267,20 +266,20 @@ Cell Usage :
 #      XOR2                        : 15
 # FlipFlops/Latches                : 85
 #      FDC                         : 85
-# IO Buffers                       : 59
+# IO Buffers                       : 100
 #      IBUF                        : 11
-#      OBUF                        : 48
+#      OBUF                        : 89
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.27 secs
+Total CPU time to Xst completion: 4.04 secs
  
 --> 
 
-Total memory usage is 4512804 kilobytes
+Total memory usage is 4512812 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 
