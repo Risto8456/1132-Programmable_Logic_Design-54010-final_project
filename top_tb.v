@@ -79,8 +79,8 @@ end
 
 //==== 送客人 Task =============================================
 task send_cust;
-    input [7:0] num;
-    input [2:0] tim;
+    input [3:0] num;
+    input [3:0] tim;
 begin
     @(negedge clk);
     in_valid = 1;
@@ -99,9 +99,9 @@ initial begin
     #20;
 
     // ── 先填滿三個櫃台 ───────────────────────────────
-    send_cust(4'd1, 4'd3);
-    send_cust(4'd2, 4'd2);
-    send_cust(4'd3, 4'd4);
+    send_cust(4'd1, 4'd8);
+    send_cust(4'd2, 4'd8);
+    send_cust(4'd3, 4'd8);
 
     // ── 再塞進 FIFO（深度 3）────────────────────────
     send_cust(4'd4, 4'd1);

@@ -43,6 +43,7 @@ module dispatcher(clk, rst_n, empty, busy, qn, qt, re, ld1, ld2, ld3, dn1, dt1, 
 			ld3 <= 1'b0;  dn3 <= 4'd0;  dt3 <= 4'd0;
 		end
 		else begin
+			#2
 			// --------- 預設值：每拍先清脈衝 ------------------------
 			re  <= 1'b0;
 			ld1 <= 1'b0;  ld2 <= 1'b0;  ld3 <= 1'b0;

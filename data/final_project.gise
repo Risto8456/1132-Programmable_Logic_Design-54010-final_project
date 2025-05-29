@@ -79,7 +79,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="top_pad.csv"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="top_summary.html"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_tb_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="top_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="top_tb_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_tb_stx_beh.prj"/>
@@ -95,7 +95,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1748525212" xil_pn:in_ck="3272021774512969290" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1748525212">
+    <transform xil_pn:end_ts="1748625042" xil_pn:in_ck="3272021774512969290" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1748625042">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../counter.v"/>
@@ -107,11 +107,11 @@
       <outfile xil_pn:name="../top.v"/>
       <outfile xil_pn:name="../top_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1748519427" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1735022487354355008" xil_pn:start_ts="1748519427">
+    <transform xil_pn:end_ts="1748625097" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1735022487354355008" xil_pn:start_ts="1748625097">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1748525215" xil_pn:in_ck="3272021774512969290" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1748525215">
+    <transform xil_pn:end_ts="1748625047" xil_pn:in_ck="3272021774512969290" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1748625047">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../counter.v"/>
@@ -123,7 +123,7 @@
       <outfile xil_pn:name="../top.v"/>
       <outfile xil_pn:name="../top_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1748525218" xil_pn:in_ck="3272021774512969290" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4588456961312881808" xil_pn:start_ts="1748525215">
+    <transform xil_pn:end_ts="1748625099" xil_pn:in_ck="3272021774512969290" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4588456961312881808" xil_pn:start_ts="1748625097">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -135,11 +135,9 @@
       <outfile xil_pn:name="top_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1748525218" xil_pn:in_ck="5645909251576464687" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5489361903298035731" xil_pn:start_ts="1748525218">
+    <transform xil_pn:end_ts="1748625100" xil_pn:in_ck="5645909251576464687" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5489361903298035731" xil_pn:start_ts="1748625099">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="top_tb_isim_beh.wdb"/>
@@ -162,6 +160,7 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="counter.ngr"/>
       <outfile xil_pn:name="top.lso"/>
@@ -171,7 +170,6 @@
       <outfile xil_pn:name="top.stx"/>
       <outfile xil_pn:name="top.syr"/>
       <outfile xil_pn:name="top.xst"/>
-      <outfile xil_pn:name="top_tb_beh.prj"/>
       <outfile xil_pn:name="top_tb_stx_beh.prj"/>
       <outfile xil_pn:name="top_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
