@@ -3,8 +3,7 @@
 //  - 用於暫存尚未被派發到櫃檯的客人資料
 //  - 每筆資料包含 {客人編號 4-bit, 服務時間 4-bit}
 //--------------------------------------------------------------
-module queue(clk, rst_n, we, dn, dt, re, qn, qt, full, empty, 
-			qdbg); // debug
+module queue(clk, rst_n, we, dn, dt, re, qn, qt, full, empty, qdbg);
     parameter DT_SZ = 4;					// 資料大小，預設 4 bits
     parameter DEPTH = 3;					// 佇列深度
     parameter PTR_W = 2;          			// PTR_W = (int)(log2(DEPTH))+1
@@ -50,12 +49,12 @@ module queue(clk, rst_n, we, dn, dt, re, qn, qt, full, empty,
 
 	// 串接資料供波形觀察
     output reg [DEPTH*2*DT_SZ-1:0] qdbg;
-    always @(ct) begin
+    always @(hd or tl) begin
 		qdbg = {DEPTH*2*DT_SZ{1'b0}};
         for(i = 0; i < ct; i = i + 1) begin
-            qdbg = {qdbg, nm[hd+i%DEPTH], tm[hd+i%DEPTH]};
+            qdbg = {qdbg, nm[(hd+i)%DEPTH], tm[(hd+i)%DEPTH]};
         end
-		for(     ;i < DEPTH; i = i + 1)begin
+		for(     ; i < DEPTH; i = i + 1) begin
             qdbg = {qdbg, 8'd0};
 		end
     end

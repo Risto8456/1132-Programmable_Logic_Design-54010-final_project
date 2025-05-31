@@ -1,25 +1,37 @@
 `timescale 1ns / 1ps
 module top_tb;
+    parameter DT_SZ = 4;		  // 資料大小，預設 4 bits
+    parameter DEPTH = 3;		  // queue 佇列深度，預設 3 個客人 (24 bits)
+    parameter PTR_W = 2;          // PTR_W = (int)(log2(DEPTH))+1
+    parameter CNTER = 3;          // 櫃台數量
 
 	// Inputs
 	reg clk;
 	reg rst_n;
 	reg in_valid;
-	reg [3:0] in_num;
-	reg [3:0] in_time;
+	reg [DT_SZ-1:0] in_num;
+	reg [DT_SZ-1:0] in_time;
 
 	// Outputs
-	wire [3:0] num1;
-	wire [3:0] clk1;
-	wire [3:0] num2;
-	wire [3:0] clk2;
-	wire [3:0] num3;
-	wire [3:0] clk3;
-	wire [23:0] qdbg;
+	wire [DT_SZ-1:0] num1;
+	wire [DT_SZ-1:0] clk1;
+	wire [DT_SZ-1:0] num2;
+	wire [DT_SZ-1:0] clk2;
+	wire [DT_SZ-1:0] num3;
+	wire [DT_SZ-1:0] clk3;
+	wire [DEPTH*2*DT_SZ-1:0] qdbg;
+	// wire fifo_re;
+	// wire [CNTER-1:0] ld;
+	// wire [CNTER-1:0] busy;
+	// wire fifo_full;
+	// wire fifo_emp;
+	// wire [DT_SZ-1:0] fifo_num;
+	// wire [DT_SZ-1:0] fifo_tim;
+	// wire [DT_SZ-1:0] dn;
+	// wire [DT_SZ-1:0] dt;
 
-	
 	// Instantiate the Unit Under Test (UUT)
-	top uut (
+	top #(.DT_SZ(DT_SZ), .DEPTH(DEPTH), .PTR_W(PTR_W), .CNTER(CNTER)) uut (
 		.clk(clk), 
 		.rst_n(rst_n), 
 		.in_valid(in_valid), 
@@ -32,6 +44,15 @@ module top_tb;
 		.num3(num3), 
 		.clk3(clk3), 
 		.qdbg(qdbg)
+		// ,.fifo_re(fifo_re), 
+		// .ld(ld), 
+		// .busy(busy), 
+		// .fifo_full(fifo_full), 
+		// .fifo_emp(fifo_emp), 
+		// .fifo_num(fifo_num), 
+		// .fifo_tim(fifo_tim), 
+		// .dn(dn), 
+		// .dt(dt)
 	);
 
 //==== Clock : 20 ns 週期 ======================================
@@ -49,8 +70,8 @@ end
 
 //==== 送客人 Task =============================================
 task send_cust;
-    input [3:0] num;
-    input [3:0] tim;
+    input [DT_SZ-1:0] num;
+    input [DT_SZ-1:0] tim;
 begin
     @(negedge clk);
     in_valid = 1;

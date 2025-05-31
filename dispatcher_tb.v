@@ -1,19 +1,21 @@
 `timescale 1ns/1ps
 module dispatcher_tb;
+parameter DT_SZ = 4;        // 資料大小，預設 4 bits
+parameter CNTER = 3;        // 櫃台數量
 // ==== DUT 連接埠 ====
 reg  clk, rst_n;
 reg  empty;
-reg  [3:0] qn;
-reg  [3:0] qt;
-reg  [2:0] busy;
+reg  [DT_SZ-1:0] qn;
+reg  [DT_SZ-1:0] qt;
+reg  [CNTER-1:0] busy;
 
 wire re;
-wire [2:0] ld;
-wire [11:0] dn;
-wire [11:0] dt;
+wire [CNTER-1:0] ld;
+wire [DT_SZ-1:0] dn;
+wire [DT_SZ-1:0] dt;
 
 // ==== DUT 例化 ====
-dispatcher #(.DT_SZ(4), .CNTER(3)) dut (
+dispatcher #(.DT_SZ(DT_SZ), .CNTER(CNTER)) dut (
     .clk(clk), .rst_n(rst_n),
     .empty(empty), .qn(qn), .qt(qt),
     .busy(busy),
@@ -54,7 +56,9 @@ end
 
 // ==== task : 餵一筆資料，並設定 busy 狀態 ====
 task load_data(
-    input [4:0] num, input [4:0] tim, input [2:0] busy_state
+    input [DT_SZ-1:0] num, 
+    input [DT_SZ-1:0] tim, 
+    input [CNTER-1:0] busy_state
 );
 begin
     @(negedge clk);
