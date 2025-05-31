@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1383" delta="unknown" >"D:/Xilinx/project/final_project/data/../queue.v" Line 58: Empty loop variable assignment statement violates IEEE 1800 syntax
+</msg>
+
 </messages>
 

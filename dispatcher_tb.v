@@ -7,20 +7,20 @@ reg  [3:0] qn;
 reg  [3:0] qt;
 reg  [2:0] busy;
 
-wire re, ld1, ld2, ld3;
-wire [3:0] dn1, dn2, dn3;
-wire [3:0] dt1, dt2, dt3;
+wire re;
+wire [2:0] ld;
+wire [11:0] dn;
+wire [11:0] dt;
 
 // ==== DUT 例化 ====
-dispatcher dut (
+dispatcher #(.DT_SZ(4), .CNTER(3)) dut (
     .clk(clk), .rst_n(rst_n),
     .empty(empty), .qn(qn), .qt(qt),
     .busy(busy),
     .re(re),
-    .ld1(ld1), .ld2(ld2), .ld3(ld3),
-    .dn1(dn1), .dt1(dt1),
-    .dn2(dn2), .dt2(dt2),
-    .dn3(dn3), .dt3(dt3)
+    .ld(ld),
+    .dn(dn),
+    .dt(dt)
 );
 
 // ==== Clock ====

@@ -11,7 +11,7 @@ wire [3:0] num;
 wire [3:0] rem;
 
 // ==== DUT 例化 ====
-counter dut (
+counter #(.DT_SZ(4)) dut (
     .clk(clk), .rst_n(rst_n),
     .ld(ld), .dn(dn), .dt(dt),
     .busy(busy), .num(num), .rem(rem)

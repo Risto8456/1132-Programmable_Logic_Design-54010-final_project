@@ -1,0 +1,5 @@
+set -tmpdir "D:/Xilinx/project/final_project/data/xst/projnav.tmp"
+set -xsthdpdir "D:/Xilinx/project/final_project/data/xst"
+elaborate
+-ifn dispatcher.prj
+-ifmt mixed

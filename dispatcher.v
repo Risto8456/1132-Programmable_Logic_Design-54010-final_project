@@ -7,19 +7,21 @@
 //            只要成功派發，就對 FIFO 送出 re=1 讀脈衝。
 //  3. 時序 : 以 clk 正緣為基準，所有旗標皆同步重設。
 //--------------------------------------------------------------
-module dispatcher(clk, rst_n, empty, busy, qn, qt, re, ld1, ld2, ld3, dn1, dt1, dn2, dt2, dn3, dt3);
-    //==================== 時脈 / 重設 =========================
+module dispatcher(clk, rst_n, empty, busy, qn, qt, re, ld, dn, dt);
+    parameter DT_SZ = 4;					// 資料大小，預設 4 bits
+    parameter CNTER = 3;					// 櫃台數量
+	//==================== 時脈 / 重設 =========================
     input  clk;
     input  rst_n;              // 同步低有效
 
     //==================== 來自 FIFO 的訊號 =====================
     input        empty;        // =1 代表 FIFO 為空
-    input  [3:0] qn;           // 佇列首端客人編號
-    input  [3:0] qt;           // 佇列首端服務時間
+    input  [DT_SZ-1:0] qn;           // 佇列首端客人編號
+    input  [DT_SZ-1:0] qt;           // 佇列首端服務時間
 
     //==================== 各櫃檯忙碌狀態 ======================
     // busy[i] = 1 → 該櫃檯正在服務，不可派發
-    input  [2:0] busy;
+    input  [CNTER-1:0] busy;
 
     //==================== 給 FIFO 的控制 ======================
     output reg   re;           // 讀出脈衝 (HIGH 1 個 clk)
@@ -27,9 +29,12 @@ module dispatcher(clk, rst_n, empty, busy, qn, qt, re, ld1, ld2, ld3, dn1, dt1, 
     //==================== 給三個 counter 的載入控制 ===========
     // ld?  : 載入脈衝 (HIGH 1 個 clk)
     // dn?/dt? : 欲載入之 {編號, 時間}
-    output reg   ld1, ld2, ld3;
-    output reg [3:0] dn1, dn2, dn3;
-    output reg [3:0] dt1, dt2, dt3;
+    output reg [CNTER-1:0] ld;
+	output reg [CNTER*DT_SZ-1:0] dn;
+	output reg [CNTER*DT_SZ-1:0] dt;
+
+	// for 迴圈用
+	integer i;
 
 	//--------------------------------------------------------------
 	//  派發邏輯
@@ -38,41 +43,49 @@ module dispatcher(clk, rst_n, empty, busy, qn, qt, re, ld1, ld2, ld3, dn1, dt1, 
 		if (!rst_n) begin
 			// --------- 非同步重設 ---------------------------------
 			re  <= 1'b0;
-			ld1 <= 1'b0;  dn1 <= 4'd0;  dt1 <= 4'd0;
-			ld2 <= 1'b0;  dn2 <= 4'd0;  dt2 <= 4'd0;
-			ld3 <= 1'b0;  dn3 <= 4'd0;  dt3 <= 4'd0;
+			ld <= {CNTER{1'b0}};       // 脈衝清 0
+			dn <= {CNTER*DT_SZ{1'b0}}; // 暫存清 0
 		end
 		else begin
 			#2
-			// --------- 預設值：每拍先清脈衝 ------------------------
+			// --------- 預設值：每拍先清脈衝 ----------------------------
 			re  <= 1'b0;
-			ld1 <= 1'b0;  ld2 <= 1'b0;  ld3 <= 1'b0;
-
+			ld <= {CNTER{1'b0}};      // 脈衝清 0
 			// --------- 當 FIFO 非空，嘗試派發 ----------------------
 			if (!empty) begin
-				// --- 優先檢查櫃檯1 ---------------------------------
-				if (!busy[0]) begin
-					re  <= 1'b1;        // 讀出 FIFO
-					ld1 <= 1'b1;        // 觸發櫃檯1 載入
-					dn1 <= qn;          // 資料送入櫃檯1
-					dt1 <= qt;
+				for (i = 0; i < CNTER; i = i + 1) begin
+					if (!busy[i] & !re) begin: uF
+						re <= 1'b1; // 找到空位就標記退出 for 迴圈
+						ld[i] <= 1'b1;
+						dn[i*4+3:i*4] <= qn;
+						dt[i*4+3:i*4] <= qt;
+					end
 				end
-				// --- 再檢查櫃檯2 -----------------------------------
-				else if (!busy[1]) begin
-					re  <= 1'b1;
-					ld2 <= 1'b1;
-					dn2 <= qn;
-					dt2 <= qt;
-				end
-				// --- 最後檢查櫃檯3 ---------------------------------
-				else if (!busy[2]) begin
-					re  <= 1'b1;
-					ld3 <= 1'b1;
-					dn3 <= qn;
-					dt3 <= qt;
-				end
-				// 若全忙碌：不派發，re=0，資料留在 FIFO
 			end
+			// if (!empty) begin
+			// 	// --- 優先檢查櫃檯1 ---------------------------------
+			// 	if (!busy[0]) begin
+			// 		re  <= 1'b1;        // 讀出 FIFO
+			// 		ld[0] <= 1'b1;        // 觸發櫃檯1 載入
+			// 		dn[3:0] <= qn;          // 資料送入櫃檯1
+			// 		dt[3:0] <= qt;
+			// 	end
+			// 	// --- 再檢查櫃檯2 -----------------------------------
+			// 	else if (!busy[1]) begin
+			// 		re  <= 1'b1;
+			// 		ld[1] <= 1'b1;
+			// 		dn[7:4] <= qn;
+			// 		dt[7:4] <= qt;
+			// 	end
+			// 	// --- 最後檢查櫃檯3 ---------------------------------
+			// 	else if (!busy[2]) begin
+			// 		re  <= 1'b1;
+			// 		ld[2] <= 1'b1;
+			// 		dn[11:8] <= qn;
+			// 		dt[11:8] <= qt;
+			// 	end
+			// 	// 若全忙碌：不派發，re=0，資料留在 FIFO
+			// end
 		end
 	end
 endmodule

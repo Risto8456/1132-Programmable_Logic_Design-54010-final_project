@@ -1,0 +1,36 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/Xilinx/project/final_project/data/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.45 secs
+ 
+--> Parameter xsthdpdir set to D:/Xilinx/project/final_project/data/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.45 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../dispatcher.v" in library work
+Module <dispatcher> compiled
+ERROR:HDLCompilers:109 - "../dispatcher.v" line 60 Most significant bit operand in part-select of vector reg 'dn' is illegal
+ERROR:HDLCompilers:110 - "../dispatcher.v" line 60 Least significant bit operand in part-select of vector reg 'dn' is illegal
+ERROR:HDLCompilers:106 - "../dispatcher.v" line 60 Illegal left hand side of nonblocking assignment
+ERROR:HDLCompilers:109 - "../dispatcher.v" line 61 Most significant bit operand in part-select of vector reg 'dt' is illegal
+ERROR:HDLCompilers:110 - "../dispatcher.v" line 61 Least significant bit operand in part-select of vector reg 'dt' is illegal
+ERROR:HDLCompilers:106 - "../dispatcher.v" line 61 Illegal left hand side of nonblocking assignment
+Analysis of file <"dispatcher.prj"> failed.
+--> 
+
+Total memory usage is 4482968 kilobytes
+
+Number of errors   :    6 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

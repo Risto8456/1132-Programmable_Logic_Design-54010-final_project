@@ -1,0 +1,29 @@
+Command line:
+   test_reverse_hex_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  4530
+
+Sat May 31 19:05:50 2025
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5168.78 Meg
+
+ Total Signals          : 15
+ Total Nets             : 45
+ Total Signal Drivers   : 7
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 10
+ Total Traceable Variables  : 26
+ Total Scalar Nets and Variables : 317
+Total Line Count : 27
+
+ Total Simulation Time: 0.03125 sec
+
+ Current Memory Usage: 5168.78 Meg
+
+Sat May 31 19:06:09 2025
+

@@ -1,5 +1,5 @@
 $date
-   Sat May 31 00:44:03 2025
+   Sat May 31 12:09:01 2025
 $end
 $version
   P.20131013
@@ -9,33 +9,33 @@ $timescale
 $end
 $scope module dispatcher_tb $end
 $var wire 1 ! re $end
-$var wire 1 " ld1 $end
-$var wire 1 # ld2 $end
-$var wire 1 $ ld3 $end
-$var wire 1 % dn1 [3] $end
-$var wire 1 & dn1 [2] $end
-$var wire 1 ' dn1 [1] $end
-$var wire 1 ( dn1 [0] $end
-$var wire 1 ) dn2 [3] $end
-$var wire 1 * dn2 [2] $end
-$var wire 1 + dn2 [1] $end
-$var wire 1 , dn2 [0] $end
-$var wire 1 - dn3 [3] $end
-$var wire 1 . dn3 [2] $end
-$var wire 1 / dn3 [1] $end
-$var wire 1 0 dn3 [0] $end
-$var wire 1 1 dt1 [3] $end
-$var wire 1 2 dt1 [2] $end
-$var wire 1 3 dt1 [1] $end
-$var wire 1 4 dt1 [0] $end
-$var wire 1 5 dt2 [3] $end
-$var wire 1 6 dt2 [2] $end
-$var wire 1 7 dt2 [1] $end
-$var wire 1 8 dt2 [0] $end
-$var wire 1 9 dt3 [3] $end
-$var wire 1 : dt3 [2] $end
-$var wire 1 ; dt3 [1] $end
-$var wire 1 < dt3 [0] $end
+$var wire 1 " ld [2] $end
+$var wire 1 # ld [1] $end
+$var wire 1 $ ld [0] $end
+$var wire 1 % dn [11] $end
+$var wire 1 & dn [10] $end
+$var wire 1 ' dn [9] $end
+$var wire 1 ( dn [8] $end
+$var wire 1 ) dn [7] $end
+$var wire 1 * dn [6] $end
+$var wire 1 + dn [5] $end
+$var wire 1 , dn [4] $end
+$var wire 1 - dn [3] $end
+$var wire 1 . dn [2] $end
+$var wire 1 / dn [1] $end
+$var wire 1 0 dn [0] $end
+$var wire 1 1 dt [11] $end
+$var wire 1 2 dt [10] $end
+$var wire 1 3 dt [9] $end
+$var wire 1 4 dt [8] $end
+$var wire 1 5 dt [7] $end
+$var wire 1 6 dt [6] $end
+$var wire 1 7 dt [5] $end
+$var wire 1 8 dt [4] $end
+$var wire 1 9 dt [3] $end
+$var wire 1 : dt [2] $end
+$var wire 1 ; dt [1] $end
+$var wire 1 < dt [0] $end
 $var reg 1 = clk $end
 $var reg 1 > rst_n $end
 $var reg 1 ? empty $end
@@ -63,35 +63,39 @@ $var wire 1 Q busy [2] $end
 $var wire 1 R busy [1] $end
 $var wire 1 S busy [0] $end
 $var reg 1 T re $end
-$var reg 1 U ld1 $end
-$var reg 1 V ld2 $end
-$var reg 1 W ld3 $end
-$var reg 4 X dn1 [3:0] $end
-$var reg 4 Y dn2 [3:0] $end
-$var reg 4 Z dn3 [3:0] $end
-$var reg 4 [ dt1 [3:0] $end
-$var reg 4 \ dt2 [3:0] $end
-$var reg 4 ] dt3 [3:0] $end
+$var reg 3 U ld [2:0] $end
+$var reg 12 V dn [11:0] $end
+$var reg 12 W dt [11:0] $end
+$var integer 32 X i $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-03
-06
+0)
+0(
+0'
+0:
+0&
 0;
-0.
-0-
+06
+02
+0%
+08
+04
+0<
+03
+09
+01
 07
 05
-0:
-09
-08
-01
-0<
-02
-04
+0T
+b0 U
+b0 V
+b0 W
+bx X
 0!
+0$
 0=
 0>
 1?
@@ -101,43 +105,29 @@ b111 B
 bx C
 bx D
 bx E
-0"
 0#
-0$
-0(
-0'
-0&
-0%
+0"
+00
+0/
+0.
+0-
 0,
 0+
 0*
-0)
-00
-0/
-0T
-0U
-0V
-0W
-b0 X
-b0 Y
-b0 Z
-b0 [
-b0 \
-b0 ]
-0F
-0J
-0N
-0G
-0P
-1R
-1Q
-0L
-0I
-1H
-0K
-0O
 1S
 0M
+1R
+0I
+0J
+0O
+1Q
+0G
+0L
+0N
+0F
+1H
+0K
+0P
 $end
 #10000
 1=
@@ -159,12 +149,12 @@ b111 E
 0?
 b1010 @
 b11 A
-0F
-1P
 1I
+1O
+0F
 0H
 1K
-1O
+1P
 #50000
 1=
 1F
@@ -191,34 +181,34 @@ b110 E
 b1011 @
 b10 A
 b110 B
-0F
-0P
-1L
-0H
 0S
+1L
+0F
+0H
+0P
 #110000
 1=
 1F
-#115000
-13
-1!
-1"
-1(
-1'
-1%
+#112000
+1;
 1T
-1U
-b1011 X
-b10 [
+b1 U
+b1011 V
+b10 W
+1!
+1$
+10
+1/
+1-
 #120000
 0=
 0F
 #130000
 1=
 1F
-#135000
+#132000
 1T
-1U
+b1 U
 #140000
 0=
 1?
@@ -230,48 +220,48 @@ b101 E
 #150000
 1=
 1F
-#155000
-0!
-0"
+#152000
 0T
-0U
+b0 U
+0!
+0$
 #160000
 0=
 0?
 b1100 @
 b100 A
 b101 B
-0F
-1J
-1N
+1S
 0R
+1J
+0O
 0L
+1N
+0F
 0H
 0K
-0O
-1S
 #170000
 1=
 1F
-#175000
+#172000
+1)
 16
+1T
+b10 U
+b11001011 V
+b1000010 W
 1!
 1#
 1*
-1)
-1T
-1V
-b1100 Y
-b100 \
 #180000
 0=
 0F
 #190000
 1=
 1F
-#195000
+#192000
 1T
-1V
+b10 U
 #200000
 0=
 1?
@@ -283,47 +273,47 @@ b11 E
 #210000
 1=
 1F
-#215000
+#212000
+0T
+b0 U
 0!
 0#
-0T
-0V
 #220000
 0=
 0?
 b1101 @
 b1 A
 b11 B
-0F
-0N
-1P
 1R
 0Q
 1L
+0N
+0F
 0H
+1P
 #230000
 1=
 1F
-#235000
-1.
-1-
-1<
-1!
-1$
-10
+#232000
+1(
+1&
+1%
+14
 1T
-1W
-b1101 Z
-b1 ]
+b100 U
+b110111001011 V
+b101000010 W
+1!
+1"
 #240000
 0=
 0F
 #250000
 1=
 1F
-#255000
+#252000
 1T
-1W
+b100 U
 #260000
 0=
 1?
@@ -332,11 +322,11 @@ b1 ]
 #270000
 1=
 1F
-#275000
-0!
-0$
+#272000
 0T
-0W
+b0 U
+0!
+0"
 #280000
 0=
 0F

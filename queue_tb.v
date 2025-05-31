@@ -11,7 +11,7 @@ wire full, empty;
 wire [23:0] qdbg;
 
 // ==== DUT 例化 (DEPTH=3) ====
-queue #(.DEPTH(3), .PTR_W(2)) dut (
+queue #(.DT_SZ(4), .DEPTH(3), .PTR_W(2)) dut (
     .clk(clk), .rst_n(rst_n),
     .we(we), .dn(dn), .dt(dt),
     .re(re),

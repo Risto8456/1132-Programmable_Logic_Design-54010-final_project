@@ -14,9 +14,7 @@
 //      queue                     : FIFO 內容除錯觀察 (24-bit)
 //--------------------------------------------------------------
 module top(clk, rst_n, in_valid, in_num, in_time, num1, clk1, num2, clk2, num3, clk3, 
-			qdbg, 
-			fifo_re, ld1, ld2, ld3, busy, fifo_full, fifo_emp, fifo_num, fifo_tim, 
-			dn1, dn2, dn3, dt1, dt2, dt3); // debug
+			qdbg); // debug
     //==================== 時脈 / 重設 =========================
     input  clk;                   // 20 ns 週期 (50 MHz)
     input  rst_n;                 // 同步低有效
@@ -41,14 +39,14 @@ module top(clk, rst_n, in_valid, in_num, in_time, num1, clk1, num2, clk2, num3, 
 	//--------------------------------------------------------------
 	//  內部線路宣告
 	//--------------------------------------------------------------
-	output        fifo_re;              // dispatcher 對 FIFO 的讀脈衝
-	output        ld1, ld2, ld3;        // dispatcher -> counter 的載入
-	output [2:0]  busy;                 // counters 忙碌旗標
-	output        fifo_full, fifo_emp;  // FIFO 滿 / 空
-	output [3:0]  fifo_num;             // queue 輸出編號
-	output [3:0]  fifo_tim;             // queue 輸出時間
-	output [3:0]  dn1, dn2, dn3;        // 發送至 counter 的編號
-	output [3:0]  dt1, dt2, dt3;        // 發送至 counter 的時間
+	wire        fifo_re;              // dispatcher 對 FIFO 的讀脈衝
+	wire        ld1, ld2, ld3;        // dispatcher -> counter 的載入
+	wire [2:0]  busy;                 // counters 忙碌旗標
+	wire        fifo_full, fifo_emp;  // FIFO 滿 / 空
+	wire [3:0]  fifo_num;             // queue 輸出編號
+	wire [3:0]  fifo_tim;             // queue 輸出時間
+	wire [3:0]  dn1, dn2, dn3;        // 發送至 counter 的編號
+	wire [3:0]  dt1, dt2, dt3;        // 發送至 counter 的時間
 
 	//--------------------------------------------------------------
 	//  模組例化

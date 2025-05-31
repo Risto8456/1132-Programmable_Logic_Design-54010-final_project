@@ -7,7 +7,7 @@
 //         ─ rem 歸零後自動釋放櫃台 (busy<=0) 並將輸出歸 0
 //--------------------------------------------------------------
 module counter(clk, rst_n, ld, dn, dt, busy, num, rem);
-    parameter TIME_W = 4;          // 服務時間位元數，預設 4 bits
+    parameter DT_SZ = 4;					// 資料大小，預設 4 bits
 
     //==================== 時脈 / 重設 =========================
     input  clk;                   // 系統時脈
@@ -15,13 +15,13 @@ module counter(clk, rst_n, ld, dn, dt, busy, num, rem);
 
     //==================== 新客人載入介面 ======================
     input         ld;             // 載入脈衝 (HIGH 1 拍)
-    input  [3:0]  dn;             // data-num  : 客人編號
-    input  [TIME_W-1:0] dt;       // data-time : 服務時間
+    input  [DT_SZ-1:0] dn;             // data-num  : 客人編號
+    input  [DT_SZ-1:0] dt;       // data-time : 服務時間
 
     //==================== 狀態輸出 ===========================
-    output reg        busy;       // =1，櫃台忙碌
-    output reg [3:0]  num;        // 現正服務之客人編號	(idle=0)
-    output reg [TIME_W-1:0] rem;  // 倒數剩餘時間		(idle=0)
+    output reg        busy;      // =1，櫃台忙碌
+    output reg [DT_SZ-1:0] num;	 // 現正服務之客人編號	(idle=0)
+    output reg [DT_SZ-1:0] rem;  // 倒數剩餘時間		(idle=0)
 
 	//--------------------------------------------------------------
 	//  主時序區塊
@@ -33,8 +33,8 @@ module counter(clk, rst_n, ld, dn, dt, busy, num, rem);
 		if (!rst_n) begin
 			// ---------- 非同步重設 --------------------------------
 			busy <= 1'b0;
-			num  <= 4'd0;
-			rem  <= {TIME_W{1'b0}};
+			num  <= {DT_SZ{1'b0}};
+			rem  <= {DT_SZ{1'b0}};
 		end
 		else begin
 			if (ld) begin
@@ -50,8 +50,8 @@ module counter(clk, rst_n, ld, dn, dt, busy, num, rem);
 				else begin
 					// rem==1 : 下一拍歸 0，釋放櫃台
 					busy <= 1'b0;
-					num  <= 4'd0;
-					rem  <= {TIME_W{1'b0}};
+					num  <= {DT_SZ{1'b0}};
+					rem  <= {DT_SZ{1'b0}};
 				end
 			end
 			// idle 狀態 (busy=0 且 ld=0) : 保持輸出為 0

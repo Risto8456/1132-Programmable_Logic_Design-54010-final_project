@@ -1,0 +1,5 @@
+set -tmpdir "D:/Xilinx/project/final_project/data/xst/projnav.tmp"
+set -xsthdpdir "D:/Xilinx/project/final_project/data/xst"
+elaborate
+-ifn test_output_2darray.prj
+-ifmt mixed
