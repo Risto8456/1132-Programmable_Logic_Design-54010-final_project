@@ -1,0 +1,502 @@
+$date
+   Sat May 31 19:42:59 2025
+$end
+$version
+  P.20131013
+$end
+$timescale
+  1ps
+$end
+$scope module queue_tb $end
+$var wire 1 W qn [3] $end
+$var wire 1 X qn [2] $end
+$var wire 1 Y qn [1] $end
+$var wire 1 Z qn [0] $end
+$var wire 1 [ qt [3] $end
+$var wire 1 \ qt [2] $end
+$var wire 1 ] qt [1] $end
+$var wire 1 ^ qt [0] $end
+$var wire 1 _ full $end
+$var wire 1 ` empty $end
+$var wire 1 + qdbg [23] $end
+$var wire 1 , qdbg [22] $end
+$var wire 1 - qdbg [21] $end
+$var wire 1 . qdbg [20] $end
+$var wire 1 / qdbg [19] $end
+$var wire 1 0 qdbg [18] $end
+$var wire 1 1 qdbg [17] $end
+$var wire 1 2 qdbg [16] $end
+$var wire 1 3 qdbg [15] $end
+$var wire 1 4 qdbg [14] $end
+$var wire 1 5 qdbg [13] $end
+$var wire 1 6 qdbg [12] $end
+$var wire 1 7 qdbg [11] $end
+$var wire 1 8 qdbg [10] $end
+$var wire 1 9 qdbg [9] $end
+$var wire 1 : qdbg [8] $end
+$var wire 1 ; qdbg [7] $end
+$var wire 1 < qdbg [6] $end
+$var wire 1 = qdbg [5] $end
+$var wire 1 > qdbg [4] $end
+$var wire 1 ? qdbg [3] $end
+$var wire 1 @ qdbg [2] $end
+$var wire 1 A qdbg [1] $end
+$var wire 1 B qdbg [0] $end
+$var reg 1 C clk $end
+$var reg 1 D rst_n $end
+$var reg 1 E we $end
+$var reg 1 F re $end
+$var reg 4 G dn [3:0] $end
+$var reg 4 H dt [3:0] $end
+$scope task write $end
+$var reg 4 I num [3:0] $end
+$var reg 4 J tim [3:0] $end
+$upscope $end
+$scope task read_one $end
+$upscope $end
+$scope module dut $end
+$var wire 1 K clk $end
+$var wire 1 L rst_n $end
+$var wire 1 M we $end
+$var wire 1 N dn [3] $end
+$var wire 1 O dn [2] $end
+$var wire 1 P dn [1] $end
+$var wire 1 Q dn [0] $end
+$var wire 1 R dt [3] $end
+$var wire 1 S dt [2] $end
+$var wire 1 T dt [1] $end
+$var wire 1 U dt [0] $end
+$var wire 1 V re $end
+$var wire 1 W qn [3] $end
+$var wire 1 X qn [2] $end
+$var wire 1 Y qn [1] $end
+$var wire 1 Z qn [0] $end
+$var wire 1 [ qt [3] $end
+$var wire 1 \ qt [2] $end
+$var wire 1 ] qt [1] $end
+$var wire 1 ^ qt [0] $end
+$var wire 1 _ full $end
+$var wire 1 ` empty $end
+$var reg 12 a nm [3:0] $end
+$var reg 12 b tm [3:0] $end
+$var reg 2 c hd [1:0] $end
+$var reg 2 d tl [1:0] $end
+$var reg 2 e ct [1:0] $end
+$var integer 32 f i $end
+$var reg 24 g qdbg [23:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0Y
+0X
+0W
+0^
+0]
+0\
+0[
+0_
+1`
+0B
+0A
+0@
+0?
+0>
+0Z
+0C
+0D
+0E
+0F
+b0 G
+b0 H
+bx I
+bx J
+0:
+04
+0=
+02
+01
+09
+00
+0;
+0/
+0<
+0.
+06
+08
+0-
+05
+07
+03
+0L
+0P
+0M
+0K
+0O
+0T
+0S
+0,
+0N
+0U
+0V
+0Q
+0R
+0+
+b0 a
+b0 b
+b0 c
+b0 d
+b0 e
+b11 f
+b0 g
+$end
+#10000
+1C
+1K
+b11 f
+#20000
+0C
+0K
+#30000
+1C
+1K
+b11 f
+#35000
+1D
+b1 I
+b11 J
+1L
+#40000
+0C
+1E
+b1 G
+b11 H
+1M
+0K
+1T
+1U
+1Q
+#50000
+1^
+1]
+0`
+1Z
+1C
+12
+11
+1.
+1K
+b100000000 a
+b1100000000 b
+b1 d
+b1 e
+b11 f
+b100110000000000000000 g
+#60000
+0C
+0E
+b0 G
+b0 H
+b10 I
+b10 J
+0M
+0K
+0T
+0U
+0Q
+#70000
+1C
+1K
+#80000
+0C
+1E
+b10 G
+b10 H
+1P
+1M
+0K
+1T
+#90000
+1C
+19
+15
+1K
+b100100000 a
+b1100100000 b
+b10 d
+b10 e
+b11 f
+b100110010001000000000 g
+#100000
+0C
+0E
+b0 G
+b0 H
+b11 I
+b1 J
+0P
+0M
+0K
+0T
+#110000
+1C
+1K
+#120000
+0C
+1E
+b11 G
+b1 H
+1P
+1M
+0K
+1U
+1Q
+#130000
+1_
+1B
+1>
+1C
+1=
+1K
+b100100011 a
+b1100100001 b
+b0 d
+b11 e
+b11 f
+b100110010001000110001 g
+#140000
+0C
+0E
+b0 G
+b0 H
+b100 I
+b100 J
+0P
+0M
+0K
+0U
+0Q
+#150000
+1C
+1K
+#160000
+0C
+1E
+b100 G
+b100 H
+1M
+0K
+1O
+1S
+#170000
+1C
+1K
+#180000
+0C
+0E
+b0 G
+b0 H
+0M
+0K
+0O
+0S
+#190000
+1C
+1K
+#200000
+0C
+0K
+#210000
+1C
+1K
+#220000
+0C
+1F
+0K
+1V
+#230000
+1Y
+0^
+0_
+0B
+0>
+0Z
+1C
+1:
+0=
+02
+09
+0.
+16
+1-
+1K
+b1 c
+b10 e
+b11 f
+b1000100011000100000000 g
+#240000
+0C
+0F
+0K
+0V
+#250000
+1C
+1K
+#260000
+0C
+0K
+#270000
+1C
+1K
+#280000
+0C
+1F
+0K
+1V
+#290000
+1^
+0]
+1Z
+1C
+0:
+12
+01
+1.
+06
+05
+1K
+b10 c
+b1 e
+b11 f
+b1100010000000000000000 g
+#300000
+0C
+0F
+0K
+0V
+#310000
+1C
+1K
+#320000
+0C
+0K
+#330000
+1C
+1K
+#340000
+0C
+1F
+0K
+1V
+#350000
+0Y
+1]
+1`
+1C
+02
+0.
+0-
+1K
+b0 c
+b0 e
+b11 f
+b0 g
+#360000
+0C
+0F
+0K
+0V
+#370000
+1C
+1K
+#380000
+0C
+0K
+#390000
+1C
+1K
+#400000
+0C
+1F
+0K
+1V
+#410000
+1C
+1K
+#420000
+0C
+0F
+b101 I
+b101 J
+0K
+0V
+#430000
+1C
+1K
+#440000
+0C
+1E
+b101 G
+b101 H
+1M
+0K
+1O
+1S
+1U
+1Q
+#450000
+1X
+0]
+1\
+0`
+1C
+12
+10
+1.
+1K
+1,
+b10100100011 a
+b10100100001 b
+b1 d
+b1 e
+b11 f
+b10101010000000000000000 g
+#460000
+0C
+0E
+b0 G
+b0 H
+0M
+0K
+0O
+0S
+0U
+0Q
+#470000
+1C
+1K
+#480000
+0C
+0K
+#490000
+1C
+1K
+#500000
+0C
+0K
+#510000
+1C
+1K
+#520000
+0C
+0K
+#530000
+1C
+1K
+#540000
+0C
+0K
+#550000
+1C
+1K

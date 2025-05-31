@@ -1,17 +1,20 @@
 `timescale 1ns/1ps
 module queue_tb;
+parameter DT_SZ = 4;					// 資料大小，預設 4 bits
+parameter DEPTH = 3;					// 佇列深度
+parameter PTR_W = 2;          			// PTR_W = (int)(log2(DEPTH))+1
 // ==== DUT 連接埠 ====
 reg  clk, rst_n;
 reg  we,  re;
-reg  [3:0] dn;
-reg  [3:0] dt;
-wire [3:0] qn;
-wire [3:0] qt;
+reg  [DT_SZ-1:0] dn;
+reg  [DT_SZ-1:0] dt;
+wire [DT_SZ-1:0] qn;
+wire [DT_SZ-1:0] qt;
 wire full, empty;
-wire [23:0] qdbg;
+wire [DEPTH*2*DT_SZ-1:0] qdbg;
 
 // ==== DUT 例化 (DEPTH=3) ====
-queue #(.DT_SZ(4), .DEPTH(3), .PTR_W(2)) dut (
+queue #(.DT_SZ(DT_SZ), .DEPTH(DEPTH), .PTR_W(PTR_W)) dut (
     .clk(clk), .rst_n(rst_n),
     .we(we), .dn(dn), .dt(dt),
     .re(re),
@@ -31,7 +34,7 @@ initial begin
 end
 
 // ==== 寫入 / 讀出 Tasks ====
-task write(input [3:0] num, input [3:0] tim);
+task write(input [DT_SZ-1:0] num, input [DT_SZ-1:0] tim);
 begin
     @(negedge clk);
     we = 1; dn = num; dt = tim;
