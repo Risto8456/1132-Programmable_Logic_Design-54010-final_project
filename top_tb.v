@@ -17,6 +17,18 @@ module top_tb;
     wire [CNTER*DT_SZ-1:0]  clk_bus;   // {clk2, clk1, clk0}
     wire [DEPTH*2*DT_SZ-1:0] qdbg;     // FIFO 除錯觀察
 
+    //==== 內部線路 Outputs (debug 用) ============================
+	// wire fifo_re;
+	// wire [CNTER-1:0] ld;
+	// wire [CNTER-1:0] busy;
+	// wire fifo_full;
+	// wire fifo_emp;
+	// wire [DT_SZ-1:0] fifo_num;
+	// wire [DT_SZ-1:0] fifo_tim;
+	// wire [DT_SZ-1:0] dn;
+	// wire [DT_SZ-1:0] dt;
+	
+
     //==== (Optional) 別名切片，方便觀察，可做擴充 =================
     wire [DT_SZ-1:0] num1 = num_bus[ 1*DT_SZ-1 : 0 ];
     wire [DT_SZ-1:0] clk1 = clk_bus[ 1*DT_SZ-1 : 0 ];
@@ -26,6 +38,8 @@ module top_tb;
     wire [DT_SZ-1:0] clk3 = clk_bus[ 3*DT_SZ-1 : 2*DT_SZ ];
     // wire [DT_SZ-1:0] num4 = num_bus[ 4*DT_SZ-1 : 3*DT_SZ ];
     // wire [DT_SZ-1:0] clk4 = clk_bus[ 4*DT_SZ-1 : 3*DT_SZ ];
+    // wire [DT_SZ-1:0] num5 = num_bus[ 5*DT_SZ-1 : 4*DT_SZ ];
+    // wire [DT_SZ-1:0] clk5 = clk_bus[ 5*DT_SZ-1 : 4*DT_SZ ];
 	// ...
 
     //==== Instantiate the Unit Under Test (UUT) =================
@@ -43,6 +57,15 @@ module top_tb;
         .num_bus  (num_bus),
         .clk_bus  (clk_bus),
         .qdbg     (qdbg)
+		// ,.fifo_re(fifo_re), 
+		// .ld(ld), 
+		// .busy(busy), 
+		// .fifo_full(fifo_full), 
+		// .fifo_emp(fifo_emp), 
+		// .fifo_num(fifo_num), 
+		// .fifo_tim(fifo_tim), 
+		// .dn(dn), 
+		// .dt(dt)
     );
 
     //==== Clock : 20 ns 週期 ======================================
@@ -64,10 +87,12 @@ module top_tb;
         input [DT_SZ-1:0] tim;
     begin
         @(negedge clk);
+		#5
         in_valid = 1;
         in_num   = num;
         in_time  = tim;
-        @(negedge clk);
+        @(posedge clk);
+		#5
         in_valid = 0;
         in_num   = 0;
         in_time  = 0;

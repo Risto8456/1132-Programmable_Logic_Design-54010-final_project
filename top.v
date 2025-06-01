@@ -14,9 +14,7 @@
 //      queue                     : FIFO 內容除錯觀察 (24-bit)
 //--------------------------------------------------------------
 module top(clk, rst_n, in_valid, in_num, in_time, 
-			// num1, clk1, num2, clk2, num3, clk3, 
-			num_bus, clk_bus, 
-			qdbg
+			num_bus, clk_bus, qdbg
 			// , fifo_re, ld, busy, fifo_full, fifo_emp, fifo_num, fifo_tim, dn, dt // debug
 			);
     parameter DT_SZ = 4;		  // 資料大小，預設 4 bits
@@ -36,12 +34,6 @@ module top(clk, rst_n, in_valid, in_num, in_time,
     //==================== 櫃檯狀態輸出 ========================
 	output [CNTER*DT_SZ-1:0] num_bus;   // {numN-1, …, num0}
 	output [CNTER*DT_SZ-1:0] clk_bus;   // {clkN-1, …, clk0}
-    // output [DT_SZ-1:0]  num1;     // 櫃檯1 現正服務客人
-    // output [DT_SZ-1:0]  clk1;     // 櫃檯1 剩餘時間
-    // output [DT_SZ-1:0]  num2;
-    // output [DT_SZ-1:0]  clk2;
-    // output [DT_SZ-1:0]  num3;
-    // output [DT_SZ-1:0]  clk3;
 
     //==================== FIFO 佇列除錯用 ====================
 	// 觀察用
@@ -85,11 +77,4 @@ module top(clk, rst_n, in_valid, in_num, in_time,
 			);
 		end
 	endgenerate
-
-	// //      counter#1
-	// counter #(DT_SZ) u_c1 (clk, rst_n, ld[0], dn, dt, busy[0], num1, clk1);
-	// //      counter#2
-	// counter #(DT_SZ) u_c2 (clk, rst_n, ld[1], dn, dt, busy[1], num2, clk2);
-	// //      counter#3
-	// counter #(DT_SZ) u_c3 (clk, rst_n, ld[2], dn, dt, busy[2], num3, clk3);
 endmodule
