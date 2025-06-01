@@ -63,6 +63,14 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="79"/>
     </file>
+    <file xil_pn:name="../test_reverse_hex_genvar.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="50"/>
+    </file>
+    <file xil_pn:name="../test_reverse_hex_genvar_tb.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="52"/>
+    </file>
   </files>
 
   <properties>

@@ -243,9 +243,9 @@ LAB28:    xsi_set_current_line(49, ng0);
 }
 
 
-extern void work_m_00000000002927466290_2582214024_init()
+extern void work_m_00000000002927466290_1042711464_init()
 {
 	static char *pe[] = {(void *)Always_32_0};
-	xsi_register_didat("work_m_00000000002927466290_2582214024", "isim/top_tb_isim_beh.exe.sim/work/m_00000000002927466290_2582214024.didat");
+	xsi_register_didat("work_m_00000000002927466290_1042711464", "isim/top_tb_isim_beh.exe.sim/work/m_00000000002927466290_1042711464.didat");
 	xsi_register_executes(pe);
 }

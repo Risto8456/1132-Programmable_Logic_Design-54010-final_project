@@ -12,15 +12,15 @@ Analyzing Verilog file "D:/Xilinx/project/final_project/data/../top_tb.v" into l
 Analyzing Verilog file "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Compiling module queue(DT_SZ=4,DEPTH=3,PTR_W=2)
+Compiling module queue(DT_SZ=4,DEPTH=2,PTR_W=2)
 Compiling module dispatcher(DT_SZ=4,CNTER=3)
-Compiling module counter
-Compiling module top(DT_SZ=4,DEPTH=3,PTR_W=2,CNTE...
+Compiling module counter(DT_SZ=4)
+Compiling module top(DT_SZ=4,DEPTH=2,PTR_W=2,CNTE...
 Compiling module top_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 6 Verilog Units
 Built simulation executable D:/Xilinx/project/final_project/data/top_tb_isim_beh.exe
-Fuse Memory Usage: 31684 KB
-Fuse CPU Usage: 437 ms
+Fuse Memory Usage: 31672 KB
+Fuse CPU Usage: 468 ms

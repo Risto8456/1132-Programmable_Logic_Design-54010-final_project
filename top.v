@@ -13,7 +13,10 @@
 //      num1/clk1 ... num3/clk3   : 各櫃檯現正服務客人編號 / 剩餘倒數
 //      queue                     : FIFO 內容除錯觀察 (24-bit)
 //--------------------------------------------------------------
-module top(clk, rst_n, in_valid, in_num, in_time, num1, clk1, num2, clk2, num3, clk3, qdbg
+module top(clk, rst_n, in_valid, in_num, in_time, 
+			// num1, clk1, num2, clk2, num3, clk3, 
+			num_bus, clk_bus, 
+			qdbg
 			// , fifo_re, ld, busy, fifo_full, fifo_emp, fifo_num, fifo_tim, dn, dt // debug
 			);
     parameter DT_SZ = 4;		  // 資料大小，預設 4 bits
@@ -31,12 +34,14 @@ module top(clk, rst_n, in_valid, in_num, in_time, num1, clk1, num2, clk2, num3, 
     input  [DT_SZ-1:0]  in_time;  // 服務時間 (1~15)
 
     //==================== 櫃檯狀態輸出 ========================
-    output [DT_SZ-1:0]  num1;     // 櫃檯1 現正服務客人
-    output [DT_SZ-1:0]  clk1;     // 櫃檯1 剩餘時間
-    output [DT_SZ-1:0]  num2;
-    output [DT_SZ-1:0]  clk2;
-    output [DT_SZ-1:0]  num3;
-    output [DT_SZ-1:0]  clk3;
+	output [CNTER*DT_SZ-1:0] num_bus;   // {numN-1, …, num0}
+	output [CNTER*DT_SZ-1:0] clk_bus;   // {clkN-1, …, clk0}
+    // output [DT_SZ-1:0]  num1;     // 櫃檯1 現正服務客人
+    // output [DT_SZ-1:0]  clk1;     // 櫃檯1 剩餘時間
+    // output [DT_SZ-1:0]  num2;
+    // output [DT_SZ-1:0]  clk2;
+    // output [DT_SZ-1:0]  num3;
+    // output [DT_SZ-1:0]  clk3;
 
     //==================== FIFO 佇列除錯用 ====================
 	// 觀察用
@@ -69,11 +74,22 @@ module top(clk, rst_n, in_valid, in_num, in_time, num1, clk1, num2, clk2, num3, 
 	dispatcher #(DT_SZ, CNTER) u_disp (
 		clk, rst_n, fifo_emp, busy, fifo_num, fifo_tim, fifo_re, ld, dn, dt);
 
-	//  3. 三個櫃檯 Counter --------------------------------------
-	//      counter#1
-	counter u_c1 (clk, rst_n, ld[0], dn, dt, busy[0], num1, clk1);
-	//      counter#2
-	counter u_c2 (clk, rst_n, ld[1], dn, dt, busy[1], num2, clk2);
-	//      counter#3
-	counter u_c3 (clk, rst_n, ld[2], dn, dt, busy[2], num3, clk3);
+	//  3. 多個櫃檯 Counter --------------------------------------
+	genvar i;
+	generate
+		for (i = 0; i < CNTER; i = i + 1) begin : g_counter
+			counter #(DT_SZ) u_c (
+				clk, rst_n, ld[i], dn, dt, busy[i], 
+				num_bus[i*DT_SZ + DT_SZ-1 : i*DT_SZ], 
+				clk_bus[i*DT_SZ + DT_SZ-1 : i*DT_SZ]
+			);
+		end
+	endgenerate
+
+	// //      counter#1
+	// counter #(DT_SZ) u_c1 (clk, rst_n, ld[0], dn, dt, busy[0], num1, clk1);
+	// //      counter#2
+	// counter #(DT_SZ) u_c2 (clk, rst_n, ld[1], dn, dt, busy[1], num2, clk2);
+	// //      counter#3
+	// counter #(DT_SZ) u_c3 (clk, rst_n, ld[2], dn, dt, busy[2], num3, clk3);
 endmodule
