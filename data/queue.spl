@@ -1,0 +1,17 @@
+[Inputs]
+clk
+rst_n
+we
+re
+=dn[3:0]=
+=dt[3:0]=
+[Outputs]
+full
+empty
+=qn[3:0]=
+=qt[3:0]=
+=qdbg[23:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel queue
+

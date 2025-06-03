@@ -1,0 +1,2 @@
+vhdtdtfi -lib work D:/Xilinx/project/final_project/queue.v -lang verilog -prj final_project -o queue.spl -module queue -template D:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 queue.spl D:/Xilinx/project/final_project/data/queue.sym 

@@ -26,7 +26,7 @@ module dispatcher(clk, rst_n, empty, busy, qn, qt, re, ld, dn, dt);
     //==================== 給 FIFO 的控制 ======================
     output reg   re;            // 讀出脈衝 (HIGH 1 個 clk)
 
-    //==================== 給三個 counter 的載入控制 ===========
+    //==================== 給 counter 的載入控制 ===========
     // ld?  : 載入脈衝 (HIGH 1 個 clk)
     // dn?/dt? : 欲載入之 {編號, 時間}
     output reg [CNTER-1:0] ld;

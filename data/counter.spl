@@ -1,0 +1,14 @@
+[Inputs]
+clk
+rst_n
+ld
+=dn[3:0]=
+=dt[3:0]=
+[Outputs]
+busy
+=num[3:0]=
+=rem[3:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel counter
+

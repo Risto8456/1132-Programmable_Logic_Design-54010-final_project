@@ -12,3 +12,5 @@ XSLTProcess counter_build.xml
 tsim -intstyle ise counter counter.nga 
 hprep6 -s IEEE1149 -n counter -i counter 
 XSLTProcess counter_build.xml 
+vhdtdtfi -lib work D:/Xilinx/project/final_project/counter.v -lang verilog -prj final_project -o counter.spl -module counter -template D:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500 counter.spl D:/Xilinx/project/final_project/data/counter.sym 
